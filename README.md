@@ -8,4 +8,4 @@ De dia, sou Desenvolvedor Fullstack na e
 à noite (e fins de semana), estou ocupado mexendo em alguma ferramenta ou aplicativo aleatório
 que estou construindo.
 
-![Porfolio home preview](https://sean-rodriguez.vercel.app/preview.jpg)
+![Porfolio home preview](https://sean-rodriguez.vercel.app/preview.png)
