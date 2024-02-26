@@ -1,0 +1,7 @@
+{
+  "name": "Digital Ocean",
+  "description": "Digital Ocean oferece serviços de cloud computing simplificados, facilitando o deploy de aplicações, armazenamento de dados, e gerenciamento de infraestrutura.",
+  "url": "https://www.digitalocean.com/",
+  "category": "cloud",
+  "thumbnail": "/uses/digital-ocean.png"
+}

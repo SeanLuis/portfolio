@@ -1,0 +1,7 @@
+{
+  "name": "Hardhat",
+  "description": "Hardhat é uma ferramenta de desenvolvimento Ethereum que facilita a compilação, implantação, teste e depuração de contratos inteligentes.",
+  "url": "https://hardhat.org/",
+  "category": "blockchain",
+  "thumbnail": "/uses/hardhat.png"
+}

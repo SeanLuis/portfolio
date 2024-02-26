@@ -1,0 +1,7 @@
+{
+  "name": "Java Spring Boot",
+  "description": "Spring Boot facilita a criação de aplicações stand-alone baseadas em Spring, com mínima configuração.",
+  "url": "https://spring.io/projects/spring-boot",
+  "category": "backend",
+  "thumbnail": "/uses/java-spring-boot.png"
+}
