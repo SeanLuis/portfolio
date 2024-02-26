@@ -1,50 +1,11 @@
-# Zooper
+# Portfolio
 
-Zooper is a beautiful personal portfolio template for developers, programmers, freelancers and designers.
+Sou Desenvolvedor Fullstack e Blockchain. Apaixonado por aprendizado contínuo e trabalho em equipe, busco sempre superar expectativas, aplicando minha expertise técnica e criatividade
+para desenvolver soluções tecnológicas eficazes e inovadoras. Comprometido com a excelência, almejo contribuir em ambientes que valorizam crescimento,
+colaboração e inovação.
 
-![Zooper template home preview](https://zooper.pages.dev/preview.jpg)
+De dia, sou Desenvolvedor Fullstack na e
+à noite (e fins de semana), estou ocupado mexendo em alguma ferramenta ou aplicativo aleatório
+que estou construindo.
 
-
-## Features
-
-Full features blog 📝.
-CMS ready 🚀.
-Super fast ⚡.
-SEO friendly 📈.
-Fully responsive 📱.
-Dark mode 🌗.
-Syntax highlighting 🌈.
-Social media links 🔗.
-Code preview playground 🎮.
-Uses page 🧑‍💻
-Bookmarks 📑.
-
-## Roadmap
-
-Comments
-Tags
-Categories
-Pagination
-Sitemap
-RSS feeds
-Search
-Likes
-
-## Tech Stack
-
-1. Nuxt JS
-2. Tailwind CSS
-3. Vue
-4. Nuxt Content Module
-5. Shiki JS ES
-
-## Installation
-
-1. `git clone` this repo or click on `Use this template` button.
-2. `cd` into the project directory.
-3. Run `yarn install` to install the dependencies.
-4. Run `yarn dev` to start the development server.
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+![Porfolio home preview](https://sean-rodriguez.vercel.app/preview.jpg)
