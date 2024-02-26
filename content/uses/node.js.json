@@ -1,0 +1,7 @@
+{
+    "name": "Node.js",
+    "description": "Um ambiente de execu\u00e7\u00e3o JavaScript do lado do servidor, que permite desenvolver aplica\u00e7\u00f5es de rede escal\u00e1veis.",
+    "url": "https://nodejs.org/",
+    "category": "backend",
+    "thumbnail": "/uses/nodejs.png"
+}

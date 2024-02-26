@@ -1,0 +1,7 @@
+{
+    "name": "Vue Router",
+    "description": "O roteador oficial para aplica\u00e7\u00f5es Vue.js, utilizado para criar p\u00e1ginas com navega\u00e7\u00e3o entre elas sem recarregar a p\u00e1gina.",
+    "url": "https://router.vuejs.org/",
+    "category": "frontend",
+    "thumbnail": "/uses/vue-router.png"
+}

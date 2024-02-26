@@ -1,6 +1,6 @@
 <template>
   <main class="min-h-screen">
-    <AppHeader class="mb-12" title="Projects" :description="description" />
+    <AppHeader class="mb-12" title="Projetos" :description="description" />
     <div class="space-y-4">
       <AppProjectCard
         v-for="(project, id) in projects"
@@ -13,9 +13,9 @@
 
 <script setup>
 const description =
-  "I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved.";
+  "Trabalhei em vários pequenos projetos ao longo dos anos, mas estes são os que mais me orgulham. Muitos deles são de código aberto, então se você encontrar algo que desperte seu interesse, confira o código e contribua se tiver ideias de como ele pode ser melhorado.";
 useSeoMeta({
-  title: "Projects | Fayaz Ahmed",
+  title: "Projetos | Sean Rodriguez",
   description,
 });
 

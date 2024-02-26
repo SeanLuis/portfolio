@@ -1,0 +1,7 @@
+{
+    "name": "Pinia",
+    "description": "A loja de estado oficialmente recomendada para Vue.js, oferecendo uma maneira de gerenciar estados globais em aplica\u00e7\u00f5es Vue.",
+    "url": "https://pinia.vuejs.org/",
+    "category": "frontend",
+    "thumbnail": "/uses/pinia.png"
+}

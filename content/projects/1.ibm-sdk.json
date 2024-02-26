@@ -1,0 +1,8 @@
+{
+  "name": "Java Spring Boot e Kafka",
+  "url": "https://github.com/SeanLuis/Kafka-SpringBoot-Java-Template",
+  "description": "Projeto modelo para usar serviços Java Spring Boot e Kafka (Dockerized)",
+  "thumbnail": "/projects/feedbackjar.png",
+  "status": "WIP",
+  "opensource": true
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Redis",
+    "description": "Armazenamento de estrutura de dados em mem\u00f3ria, utilizado como sistema de cache e para mensagens entre processos.",
+    "url": "https://redis.io/",
+    "category": "backend",
+    "thumbnail": "/uses/redis.png"
+}

@@ -1,0 +1,7 @@
+{
+    "name": "Apache Kafka",
+    "description": "Plataforma de streaming de eventos distribu\u00edda, utilizada para construir aplica\u00e7\u00f5es de dados em tempo real.",
+    "url": "https://kafka.apache.org/",
+    "category": "others",
+    "thumbnail": "/uses/apache-kafka.png"
+}
