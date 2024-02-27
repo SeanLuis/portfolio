@@ -27,9 +27,9 @@
 
 <script setup>
 const description =
-  "Softwares que eu uso";
+  "Tecnologias que uso";
 useSeoMeta({
-  title: "Coisas que eu uso | Sean Rodriguez",
+  title: "Tecnologias que uso | Sean Rodriguez",
   description,
 });
 const { data: items } = await useAsyncData("uses", () =>

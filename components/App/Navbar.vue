@@ -4,10 +4,11 @@
       <ul
         class="flex items-center my-4 px-3 text-sm font-medium text-gray-800 rounded-full shadow-lg bg-white/90 shadow-gray-800/5 ring-1 backdrop-blur dark:bg-gray-800/90 dark:text-gray-200 dark:ring-white/20 ring-gray-900/5"
       >
-        <li v-for="item in items" :key="item.path">
+        <li v-for="(item, index) in items" :key="item.path">
           <UTooltip
             :text="item.name"
             :ui="{ popper: { strategy: 'absolute' } }"
+            :shortcuts="['⌘', `${index+1}`]"
           >
             <ULink
               :to="item.path"
@@ -70,4 +71,37 @@ const items = [
     icon: "solar:bookmark-linear",
   },
 ];
+
+defineShortcuts({
+  meta_1: {
+    usingInput: true,
+    handler: () => {
+      navigateTo('/')
+    }
+  },
+  meta_2: {
+    usingInput: true,
+    handler: () => {
+      navigateTo('/projects')
+    }
+  },
+  meta_3: {
+    usingInput: true,
+    handler: () => {
+      navigateTo('/work-experience')
+    }
+  },
+  meta_4: {
+    usingInput: true,
+    handler: () => {
+      navigateTo('/technologies-i-use')
+    }
+  },
+  meta_5: {
+    usingInput: true,
+    handler: () => {
+      navigateTo('/bookmarks')
+    }
+  }
+})
 </script>
