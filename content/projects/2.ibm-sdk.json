@@ -1,5 +1,5 @@
 {
-  "name": "IBM-SDK",
+  "name": "IBM-Cloud SDK",
   "url": "https://github.com/SeanLuis/ibm-cloud-sdk",
   "description": "O IBM Cloud SDK for PHP é uma biblioteca que fornece uma maneira fácil de interagir com serviços da IBM Cloud a partir de aplicativos escritos em PHP. O SDK atualmente suporta IBM NLU, IBM COS, IBM TTS e IBM STT.",
   "thumbnail": "/projects/feedbackjar.png",

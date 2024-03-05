@@ -1,0 +1,8 @@
+{
+  "name": "REST Data Validator",
+  "url": "https://www.npmjs.com/package/rest-data-validator",
+  "description": "REST Data Validator is a versatile library designed to offer comprehensive validation for data in RESTful APIs. It supports a wide range of data types, validation rules, and is designed with extensibility in mind, making it ideal for ensuring data integrity and compliance with API specifications.",
+  "thumbnail": "/projects/feedbackjar.png",
+  "status": "WIP",
+  "opensource": true
+}

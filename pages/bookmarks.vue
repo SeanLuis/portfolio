@@ -110,6 +110,76 @@ const bookmarks = [
     label: "Rakko Tools",
     url: "https://en.rakko.tools/",
   },
+  {
+    id: 16,
+    label: "Spline Web Animations",
+    url: "https://spline.design/examples",
+  },
+  {
+    id: 17,
+    label: "Learn SQL - Mouredev",
+    url: "https://github.com/mouredev/hello-sql",
+  },
+  {
+    id: 18,
+    label: "Termino.js - Integrated terminal for web",
+    url: "https://github.com/MarketingPipeline/Termino.js",
+  },
+  {
+    id: 19,
+    label: "Typebot is a powerful chatbot builder that you can self-host.",
+    url: "https://typebot.io/",
+  },
+  {
+    id: 20,
+    label: "Awesome CSS Frameworks",
+    url: "https://github.com/troxler/awesome-css-frameworks"
+  },
+  {
+    id: 21,
+    label: "JSON Server",
+    url: "https://github.com/typicode/json-server"
+  },
+  {
+    id: 22,
+    label: "Excalidraw",
+    url: "https://excalidraw.com/"
+  },
+  {
+    id: 23,
+    label: "Public APIs",
+    url: "https://public-apis.xyz/"
+  },
+  {
+    id: 24,
+    label: "CSS.gg",
+    url: "https://css.gg/"
+  },
+  {
+    id: 25,
+    label: "Tiny Helpers",
+    url: "https://tiny-helpers.dev/"
+  },
+  {
+    id: 26,
+    label: "Observable",
+    url: "https://observablehq.com/"
+  },
+  {
+    id: 27,
+    label: "Figma Linux",
+    url: "https://github.com/Figma-Linux/figma-linux"
+  },
+  {
+    id: 28,
+    label: "Netlify CMS",
+    url: "https://www.netlifycms.org/"
+  },
+  {
+    id: 29,
+    label: "Vercel",
+    url: "https://vercel.com/"
+  }
 ];
 
 function getHost(url) {
