@@ -49,12 +49,12 @@ const items = [
     path: "/projects",
     icon: "solar:folder-with-files-outline",
   },
-//  {
-//    name: "Articles",
-//    path: "/articles",
-//    icon: "solar:document-add-outline",
-//  },
-//  { name: "Laboratório", path: "/lab", icon: "heroicons:beaker" },
+ {
+   name: "Artigos",
+   path: "/articles",
+   icon: "solar:document-add-outline",
+ },
+ { name: "Laboratório", path: "/lab", icon: "heroicons:beaker" },
   {
     name: "Experiência",
     path: "/work-experience",

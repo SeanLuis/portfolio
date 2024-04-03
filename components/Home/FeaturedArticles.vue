@@ -10,7 +10,7 @@
     </ul>
     <div class="flex items-center justify-center mt-6 text-sm">
       <UButton
-        label="All Articles &rarr;"
+        label="Todos os artigos &rarr;"
         to="/articles"
         variant="link"
         color="gray"
