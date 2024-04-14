@@ -1,0 +1,9 @@
+{
+    "name": "Clean Architecture Templates",
+    "url": "https://github.com/SeanLuis/clean-architecture-templates",
+    "description": "This repository offers models to implement a clean architecture in different technologies, facilitating the structuring of software projects.",
+    "thumbnail": "/projects/feedbackjar.png",
+    "status": "WIP",
+    "opensource": true
+  }
+  
