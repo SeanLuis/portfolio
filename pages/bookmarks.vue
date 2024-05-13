@@ -179,6 +179,21 @@ const bookmarks = [
     id: 29,
     label: "Vercel",
     url: "https://vercel.com/"
+  },
+  {
+    id: 30,
+    label: "Effect",
+    url: "https://effect.website/"
+  },
+  {
+    id: 31,
+    label: "Brands Logos",
+    url: "https://brandslogos.com/"
+  },
+  {
+    id: 32,
+    label: "Codefy Ai",
+    url: "https://www.codefy.ai/"
   }
 ];
 
