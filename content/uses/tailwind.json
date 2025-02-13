@@ -1,0 +1,7 @@
+{
+  "name": "Tailwind CSS",
+  "description": "Um framework CSS utility-first que permite criar designs personalizados rapidamente através de classes utilitárias compostas.",
+  "url": "https://tailwindcss.com/",
+  "category": "frontend",
+  "thumbnail": "/uses/tailwind.png"
+}

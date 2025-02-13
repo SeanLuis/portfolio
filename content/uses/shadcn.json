@@ -1,0 +1,7 @@
+{
+  "name": "Shadcn UI",
+  "description": "Uma biblioteca de componentes React elegantemente projetados e altamente customizáveis, construída com Radix UI e Tailwind CSS.",
+  "url": "https://ui.shadcn.com/",
+  "category": "frontend",
+  "thumbnail": "/uses/shadcn.png"
+}

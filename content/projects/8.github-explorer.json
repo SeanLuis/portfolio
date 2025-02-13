@@ -1,0 +1,8 @@
+{
+  "name": "GitHub Open Source Explorer",
+  "url": "https://github-explorer.nuxt.dev",
+  "description": "Uma aplicação web moderna para descobrir, explorar e rastrear projetos open-source em tendência no GitHub. Construído com Nuxt 3, Vue 3 e TailwindCSS, oferecendo recursos como pesquisa avançada, dashboard de repositórios em tendência e modo escuro.",
+  "thumbnail": "/projects/feedbackjar.png",
+  "status": "Published",
+  "opensource": true
+}
