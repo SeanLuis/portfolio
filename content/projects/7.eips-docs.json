@@ -2,7 +2,6 @@
   "name": "Ethereum Documentation",
   "url": "https://eips-ethereum.netlify.app/",
   "description": "Contribuição para a documentação oficial do Ethereum, ajudando a manter e melhorar a documentação das EIPs (Ethereum Improvement Proposals)",
-  "thumbnail": "/projects/feedbackjar.png",
   "status": "Published",
   "opensource": true
 }

@@ -194,7 +194,62 @@ const bookmarks = [
     id: 32,
     label: "Codefy Ai",
     url: "https://www.codefy.ai/"
-  }
+  },
+  {
+    id: 33,
+    label: "Code Wars",
+    url: "https://www.codewars.com/"
+  },
+  {
+    id: 34,
+    label: "FreeCodeCamp",
+    url: "https://www.freecodecamp.org/"
+  },
+  {
+    id: 35,
+    label: "CSS Tricks",
+    url: "https://css-tricks.com/"
+  },
+  {
+    id: 36,
+    label: "Tailwind CSS",
+    url: "https://tailwindcss.com/"
+  },
+  {
+    id: 37,
+    label: "Tailwind UI",
+    url: "https://tailwindui.com/"
+  },
+  {
+    id: 38,
+    label: "Tailwind Toolbox",
+    url: "https://www.tailwindtoolbox.com/"
+  },
+  {
+    id: 39,
+    label: "Gradii",
+    url: "https://www.gradii.fun/"
+  },
+  {
+    id: 40,
+    label: "Tailwind CSS Cheat Sheet",
+    url: "https://nerdcave.com/tailwind-cheat-sheet"
+  },
+  {
+    id: 41,
+    label: "Tailwind CSS Play",
+    url: "https://play.tailwindcss.com/"
+  },
+  {
+    id: 42,
+    label: "Tailwind CSS Components",
+    url: "https://tailwindcomponents.com/"
+  },
+  {
+    id: 43,
+    label: "The Algorithms",
+    url: "https://the-algorithms.com/"
+  },
 ];
 
 function getHost(url) {

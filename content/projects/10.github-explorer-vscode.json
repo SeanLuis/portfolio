@@ -1,0 +1,7 @@
+{
+  "name": "GitHub Explorer VS Code Extension",
+  "url": "https://github.com/SeanLuis/github-explorer/tree/master/vscode-extension",
+  "description": "Extensão para VS Code que permite explorar tendências do GitHub diretamente no editor de código. Oferece funcionalidades para visualizar repositórios em destaque, estatísticas detalhadas e perfis de desenvolvedores sem sair do ambiente de desenvolvimento. Integrado com o ecossistema GitHub Explorer para uma experiência de desenvolvimento mais fluida.",
+  "status": "Published",
+  "opensource": true
+}

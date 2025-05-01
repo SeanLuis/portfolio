@@ -2,7 +2,6 @@
   "name": "Java + SpringBoot + Serializer",
   "url": "https://github.com/SeanLuis/java-springboot-serializer",
   "description": "O objetivo principal deste miniprojeto é demonstrar como usar serializadores e grupos de validação de maneira eficaz em um aplicativo Spring Boot para lidar com dados de solicitação e resposta.",
-  "thumbnail": "/projects/feedbackjar.png",
   "status": "WIP",
   "opensource": true
 }

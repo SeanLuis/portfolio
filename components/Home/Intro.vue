@@ -1,14 +1,15 @@
 <template>
   <div class="space-y-6">
-    <NuxtImg src="/avatar.jpg" alt="Sean Rodriguez"
+    <NuxtImg src="/avatar.jpeg" alt="Sean Rodriguez"
       class="ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 transition-all duration-300 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-16 sm:w-16"
       sizes="48px sm:64px" placeholder format="webp" />
     <h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
       Olá!
     </h1>
     <p class="text-gray-900 dark:text-gray-400">
-      Sou Desenvolvedor Fullstack e Blockchain, com experiência em Symfony, Vue.js e Solidity.
-    Destaco-me pela inovação e qualidade, contribuindo para o sucesso de projetos em
+      Sou Desenvolvedor Fullstack e Blockchain, especializado em Vue.js, Nuxt, Node.js, NestJS e TypeScript para desenvolvimento frontend e backend.
+      Possuo expertise em bancos de dados como MongoDB e MySQL, gerenciamento de estado com Pinia, e desenvolvimento blockchain com Solidity, Hardhat e integração com redes como Hedera Hashgraph e protocolos Web3.
+      Tenho contribuído para projetos inovadores em empresas e organizações como
       <strong>
         <a class="underline text-[#0284c7]" href="https://agtrace.ag">
           <UTooltip text="agtrace.ag">
@@ -19,8 +20,17 @@
           <UTooltip text="qa-bit.com">
             Qa-Bit
           </UTooltip>
-          </a>,
-        AMAS,
+        </a>,
+        <a class="underline text-[#0284c7]" href="https://www.abrapa.com.br/">
+          <UTooltip text="abrapa.com.br">
+            Abrapa
+          </UTooltip>
+        </a>,
+        <a class="underline text-[#0284c7]" href="https://www.3tentos.com.br/">
+          <UTooltip text="3tentos.com.br">
+            3Tentos
+          </UTooltip>
+        </a>,
         <a class="underline text-[#0284c7]" href="https://www.syntonize.com/en/home-en/">
           <UTooltip text="syntonize.com">
             Syntonize
@@ -34,14 +44,11 @@
         </a>
         e Alacasa.
       </strong>
-    Apaixonado por aprendizado contínuo e trabalho em equipe, busco sempre superar expectativas, aplicando minha expertise técnica e criatividade
-    para desenvolver soluções tecnológicas eficazes e inovadoras. Comprometido com a excelência, almejo contribuir em ambientes que valorizam crescimento,
-    colaboração e inovação.
+      Entusiasta de tecnologias cloud como AWS, Docker e arquitetura de microsserviços. Comprometido com código limpo, testes automatizados e desenvolvimento ágil para criar soluções escaláveis e de alta performance.
     </p>
     <p class="text-gray-900 dark:text-gray-400">
-      De dia, sou Desenvolvedor Fullstack na e
-      à noite (e fins de semana), estou ocupado mexendo em alguma ferramenta ou aplicativo aleatório
-      que estou construindo.
+      De dia, sou Desenvolvedor Fullstack e
+      à noite (e fins de semana), desenvolvo soluções tecnológicas inovadoras utilizando o ecossistema JavaScript e tecnologias emergentes no campo de Web3.
     </p>
   </div>
 </template>
@@ -50,6 +57,6 @@
 useSeoMeta({
   title: "Sean Rodriguez",
   description:
-    "Sou Desenvolvedor Fullstack e Blockchain, com experiência em Symfony, Vue.js e Solidity. Destaco-me pela inovação e qualidade, contribuindo para o sucesso de projetos em AgTrace, Qa-Bit, AMAS, Syntonize, Toma1, CubaMax e Alacasa. Apaixonado por aprendizado contínuo e trabalho em equipe, busco sempre superar expectativas, aplicando minha expertise técnica e criatividade para desenvolver soluções tecnológicas eficazes e inovadoras. Comprometido com a excelência, almejo contribuir em ambientes que valorizam crescimento, colaboração e inovação.",
+    "Desenvolvedor Fullstack e Blockchain especializado em Vue.js, Nuxt, Node.js, NestJS e TypeScript. Experiência em bancos de dados MongoDB e MySQL, e tecnologias blockchain como Solidity e Hedera Hashgraph. Contribuindo para projetos inovadores em organizações como Abrapa, 3Tentos, Acelen, AgTrace, Qa-Bit e outras.",
 });
 </script>
