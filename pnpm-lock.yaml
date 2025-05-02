@@ -17,6 +17,9 @@ importers:
       '@nuxt/ui':
         specifier: 2.11.1
         version: 2.11.1(nuxt@3.9.1(@parcel/watcher@2.4.1)(@types/node@20.11.20)(encoding@0.1.13)(rollup@4.12.0)(terser@5.28.1)(typescript@5.3.3)(vite@5.0.11(@types/node@20.11.20)(terser@5.28.1)))(rollup@4.12.0)(vite@5.0.11(@types/node@20.11.20)(terser@5.28.1))(vue@3.4.19(typescript@5.3.3))
+      crypto-js:
+        specifier: ^4.2.0
+        version: 4.2.0
       html2canvas:
         specifier: ^1.4.1
         version: 1.4.1
@@ -26,6 +29,9 @@ importers:
       marked:
         specifier: ^7.0.4
         version: 7.0.5
+      uuid:
+        specifier: ^11.1.0
+        version: 11.1.0
       vue-use-fixed-header:
         specifier: ^2.0.0
         version: 2.0.3
@@ -1651,6 +1657,9 @@ packages:
     peerDependenciesMeta:
       uWebSockets.js:
         optional: true
+
+  crypto-js@4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
 
   css-declaration-sorter@7.1.1:
     resolution: {integrity: sha512-dZ3bVTEEc1vxr3Bek9vGwfB5Z6ESPULhcRvO472mfjVnj8jRcTnKO8/JTczlvxM10Myb+wBM++1MtdO76eWcaQ==}
@@ -4266,6 +4275,10 @@ packages:
   utrie@1.0.2:
     resolution: {integrity: sha512-1MLa5ouZiOmQzUbjbu9VmjLzn1QLXBhwpUa7kdLUQK+KQ5KA9I1vk5U4YHe/X2Ch7PYnJfWuWT+VbuxbGwljhw==}
 
+  uuid@11.1.0:
+    resolution: {integrity: sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==}
+    hasBin: true
+
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
@@ -6658,6 +6671,8 @@ snapshots:
       which: 2.0.2
 
   crossws@0.2.3: {}
+
+  crypto-js@4.2.0: {}
 
   css-declaration-sorter@7.1.1(postcss@8.4.35):
     dependencies:
@@ -9946,6 +9961,8 @@ snapshots:
   utrie@1.0.2:
     dependencies:
       base64-arraybuffer: 1.0.2
+
+  uuid@11.1.0: {}
 
   validate-npm-package-license@3.0.4:
     dependencies:
