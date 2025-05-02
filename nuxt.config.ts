@@ -23,6 +23,11 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: "antialiased bg-gray-50 dark:bg-black min-h-screen",
       },
+      script: [
+        // Agregar html2canvas y jsPDF para la generación de PDFs
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js', defer: true },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js', defer: true }
+      ]
     },
   },
   content: {

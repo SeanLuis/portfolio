@@ -24,6 +24,9 @@
     "@iconify-json/lucide": "1.1.145",
     "@nuxt/image": "1.1.0",
     "@nuxt/ui": "2.11.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
+    "marked": "^7.0.4",
     "vue-use-fixed-header": "^2.0.0"
   }
 }
