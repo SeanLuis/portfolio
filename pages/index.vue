@@ -3,6 +3,7 @@
     <div class="space-y-24">
       <HomeIntro />
       <HomeSocialLinks />
+      <HomeCV />
       <HomeFeaturedProjects />
       <HomeFeaturedArticles />
       <!--<HomeNewsletter />-->
