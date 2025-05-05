@@ -123,7 +123,12 @@
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
             <!-- Cargo -->
             <UFormGroup label="Cargo">
-              <UInput v-model="coverLetterData.recipientPosition" placeholder="ex. Diretor de RH" />
+              <USelect
+                v-model="coverLetterData.recipientPosition"
+                :options="jobPositions"
+                searchable
+                placeholder="Selecione o cargo"
+              />
             </UFormGroup>
 
             <!-- Empresa -->
@@ -144,9 +149,14 @@
             </UFormGroup>
           </div>
 
-          <!-- Puesto -->
+          <!-- Puesto - Reemplazado por USelect -->
           <UFormGroup label="Cargo ao qual você se candidata">
-            <UInput v-model="coverLetterData.jobPosition" placeholder="ex. Desenvolvedor Frontend Sênior" />
+            <USelect
+              v-model="coverLetterData.jobPosition"
+              :options="jobPositions"
+              searchable
+              placeholder="Selecione o cargo"
+            />
           </UFormGroup>
         </div>
 
@@ -194,10 +204,19 @@ interface CoverLetterData {
   jobPosition: string;
 }
 
+// Add this interface for job positions
+interface JobPosition {
+  label: string;
+  value: string;
+}
+
 const isPreviewOpen = ref(false);
 const isCoverLetterOpen = ref(false);
 const isGenerating = ref(false);
 const selectedCV = ref<CVOption | null>(null);
+
+// Fix the typing for jobPositions
+const jobPositions = ref<JobPosition[]>([]);
 
 const coverLetterData = ref<CoverLetterData>({
   date: new Date().toLocaleDateString(),
@@ -210,6 +229,41 @@ const coverLetterData = ref<CoverLetterData>({
 });
 
 const coverLetterTemplates = {
+  en: `# COVER LETTER
+
+Sean Luis Guada Rodriguez  
+Florianópolis, Santa Catarina, Brazil  
+seanluis47@gmail.com  
+[LinkedIn](https://www.linkedin.com/in/sean-luisguada-rodriguez-4360a5bb)
+
+[Date]
+
+[Recipient Name]  
+[Position]  
+[Company]  
+[Address]  
+[City, State, Zip Code]
+
+Dear [Recipient Name],
+
+I am writing to express my interest in joining your team as [Position]. With proven experience in modern technologies such as Vue.js (Nuxt.js, Pinia, Router), Node.js (NestJS, Express) and blockchain development (Solidity, Hardhat, Polygon zkEVM, Hedera Hashgraph), I am confident I can add significant value to [Company].
+
+Currently, as a Frontend Engineer at AgTrace, I lead the development of decentralized applications (DApps) for the agricultural sector, implementing intuitive interfaces with Vue.js and optimizing Solidity smart contracts that have significantly improved performance and reduced transaction costs. Additionally, I have collaborated on a traceability project with leading companies such as Abrapa, Reserva, C&A, and Renner, providing complete transparency in the supply chain through QR codes.
+
+My previous experience includes roles as a Backend Developer at QA-Bit, where I implemented RESTful APIs and real-time messaging systems with NestJS and TypeScript, and as a freelance developer, creating fullstack solutions and integrating AWS technologies (EC2, Route 53, Lambda, S3, CloudFront). This combination of skills allows me to approach projects from multiple perspectives and deliver complete and robust solutions.
+
+Among my notable projects are GitHub Open Source Explorer (a modern web application developed with Nuxt 3 and Tailwind CSS) and a standard proposal for solvency verification in DeFi protocols using zero-knowledge proofs (zk). My focus on optimization and best practices has been constant throughout these projects.
+
+In addition to my technical skills, I bring a problem-solving mindset, ability to work in multidisciplinary teams, and genuine enthusiasm for emerging technologies. My education includes a Specialized Program in Blockchain from the University at Buffalo, which complements my practical experience in developing decentralized applications.
+
+I am excited about the possibility of contributing to [Company]'s success and discussing how my experience and skills can support your technology goals. You can find more details about my projects in my portfolio: sean-rodriguez.vercel.app.
+
+I am available for an interview at your convenience.
+
+Sincerely,
+
+Sean Luis Guada Rodriguez`,
+
   es: `# CARTA DE PRESENTACIÓN
 
 Sean Luis Guada Rodriguez  
@@ -231,7 +285,7 @@ Me dirijo a usted con interés en formar parte de su equipo como [Puesto]. Con e
 
 Actualmente, como Frontend Engineer en AgTrace, lidero el desarrollo de aplicaciones descentralizadas (DApps) para el sector agrícola, implementando interfaces intuitivas con Vue.js y optimizando contratos inteligentes en Solidity que han mejorado significativamente el rendimiento y reducido los costos de transacción. Además, he colaborado en un proyecto de trazabilidad con empresas líderes como Abrapa, Reserva, C&A y Renner, proporcionando transparencia total en la cadena de suministro mediante códigos QR.
 
-Mi experiencia previa incluye roles como Desarrollador Backend en QA-Bit, donde implementé APIs RESTful y sistemas de mensajería en tiempo real con NestJS y TypeScript, y como desarrollador freelance, creando soluciones fullstack e integrando tecnologías AWS (EC2, Route 53, Lambda, S3, CloudFront). Esta combinación de habilidades me permite abordar proyectos desde múltiples perspectivas y entregar soluciones completas y robustas.
+Mi experiencia previa incluye roles como Desarrollador Backend en QA-Bit, donde implementé APIs RESTful y sistemas de mensajería en tiempo real con NestJS y TypeScript, y como desarrollador freelance, creando soluciones fullstack e integrando tecnologías AWS (EC2, Route 53, Lambda, S3, CloudFront). Esta combinación de habilidades me permite abordar proyectos desde múltiples perspectivas e entregar soluciones completas y robustas.
 
 Entre mis proyectos destacados se encuentran GitHub Open Source Explorer (una aplicación web moderna desarrollada con Nuxt 3 y Tailwind CSS) y una propuesta de estándar para verificación de solvencia en protocolos DeFi utilizando pruebas de conocimiento cero (zk). Mi enfoque en la optimización y las buenas prácticas ha sido constante en todos estos proyectos.
 
@@ -283,6 +337,14 @@ Sean Luis Guada Rodriguez`
 
 const cvOptions: CVOption[] = [
   {
+    name: "English",
+    url: "/cv/en.html",
+    pdfUrl: "/cv/SEAN%20LUIS%20GUADA%20RODRIGUEZ_EN.pdf",
+    pdfFilename: "SEAN_LUIS_GUADA_RODRIGUEZ_EN.pdf",
+    icon: "mdi:united-kingdom",
+    languageCode: "en"
+  },
+  {
     name: "Español",
     url: "/cv/es.html",
     pdfUrl: "/cv/SEAN%20LUIS%20GUADA%20RODRIGUEZ_ES.pdf",
@@ -300,6 +362,46 @@ const cvOptions: CVOption[] = [
   }
 ];
 
+const jobPositionByLanguage = {
+  en: "Senior Frontend Developer",
+  es: "Desarrollador Frontend Senior",
+  pt: "Desenvolvedor Frontend Sênior"
+};
+
+// Define job positions for each language
+const jobPositionsMap = {
+  en: [
+    { label: "Senior Frontend Developer", value: "Senior Frontend Developer" },
+    { label: "Senior Blockchain Developer", value: "Senior Blockchain Developer" },
+    { label: "Fullstack Developer", value: "Fullstack Developer" },
+    { label: "Smart Contract Engineer", value: "Smart Contract Engineer" },
+    { label: "DApp Developer", value: "DApp Developer" },
+    { label: "Web3 Developer", value: "Web3 Developer" },
+    { label: "Frontend Engineer", value: "Frontend Engineer" },
+    { label: "Blockchain Engineer", value: "Blockchain Engineer" }
+  ],
+  es: [
+    { label: "Desarrollador Frontend Senior", value: "Desarrollador Frontend Senior" },
+    { label: "Desarrollador Blockchain Senior", value: "Desarrollador Blockchain Senior" },
+    { label: "Desarrollador Fullstack", value: "Desarrollador Fullstack" },
+    { label: "Ingeniero de Contratos Inteligentes", value: "Ingeniero de Contratos Inteligentes" },
+    { label: "Desarrollador de DApps", value: "Desarrollador de DApps" },
+    { label: "Desarrollador Web3", value: "Desarrollador Web3" },
+    { label: "Ingeniero Frontend", value: "Ingeniero Frontend" },
+    { label: "Ingeniero Blockchain", value: "Ingeniero Blockchain" }
+  ],
+  pt: [
+    { label: "Desenvolvedor Frontend Sênior", value: "Desenvolvedor Frontend Sênior" },
+    { label: "Desenvolvedor Blockchain Sênior", value: "Desenvolvedor Blockchain Sênior" },
+    { label: "Desenvolvedor Fullstack", value: "Desenvolvedor Fullstack" },
+    { label: "Engenheiro de Contratos Inteligentes", value: "Engenheiro de Contratos Inteligentes" },
+    { label: "Desenvolvedor de DApps", value: "Desenvolvedor de DApps" },
+    { label: "Desenvolvedor Web3", value: "Desenvolvedor Web3" },
+    { label: "Engenheiro Frontend", value: "Engenheiro Frontend" },
+    { label: "Engenheiro Blockchain", value: "Engenheiro Blockchain" }
+  ]
+};
+
 function previewCV(cv: CVOption): void {
   selectedCV.value = cv;
   isPreviewOpen.value = true;
@@ -309,6 +411,13 @@ function openCoverLetterForm(cv: CVOption): void {
   selectedCV.value = cv;
   isCoverLetterOpen.value = true;
   
+  // Set job position options based on selected language
+  const languageCode = cv.languageCode as keyof typeof jobPositionsMap;
+  jobPositions.value = jobPositionsMap[languageCode] || jobPositionsMap.en;
+  
+  const defaultJobPosition = jobPositionByLanguage[languageCode] || 
+                           "Senior Frontend Developer";
+  
   coverLetterData.value = {
     date: new Date().toLocaleDateString(),
     recipientName: '',
@@ -316,7 +425,7 @@ function openCoverLetterForm(cv: CVOption): void {
     companyName: '',
     address: '',
     cityStateZip: '',
-    jobPosition: 'Desarrollador Frontend Senior'
+    jobPosition: defaultJobPosition
   };
 }
 
