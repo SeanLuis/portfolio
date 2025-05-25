@@ -149,13 +149,11 @@
             </UFormGroup>
           </div>
 
-          <!-- Puesto - Reemplazado por USelect -->
+          <!-- Puesto - Changed back to UInput for free text entry -->
           <UFormGroup label="Cargo ao qual você se candidata">
-            <USelect
+            <UInput
               v-model="coverLetterData.jobPosition"
-              :options="jobPositions"
-              searchable
-              placeholder="Selecione o cargo"
+              placeholder="ex. Desenvolvedor Frontend Sênior"
             />
           </UFormGroup>
         </div>
@@ -285,7 +283,7 @@ Me dirijo a usted con interés en formar parte de su equipo como [Puesto]. Con e
 
 Actualmente, como Frontend Engineer en AgTrace, lidero el desarrollo de aplicaciones descentralizadas (DApps) para el sector agrícola, implementando interfaces intuitivas con Vue.js y optimizando contratos inteligentes en Solidity que han mejorado significativamente el rendimiento y reducido los costos de transacción. Además, he colaborado en un proyecto de trazabilidad con empresas líderes como Abrapa, Reserva, C&A y Renner, proporcionando transparencia total en la cadena de suministro mediante códigos QR.
 
-Mi experiencia previa incluye roles como Desarrollador Backend en QA-Bit, donde implementé APIs RESTful y sistemas de mensajería en tiempo real con NestJS y TypeScript, y como desarrollador freelance, creando soluciones fullstack e integrando tecnologías AWS (EC2, Route 53, Lambda, S3, CloudFront). Esta combinación de habilidades me permite abordar proyectos desde múltiples perspectivas e entregar soluciones completas y robustas.
+Mi experiencia previa incluye roles como Desarrollador Backend en QA-Bit, donde implementé APIs RESTful y sistemas de mensajería en tiempo real con NestJS y TypeScript, y como desarrollador freelance, creando soluciones fullstack e integrando tecnologías AWS (EC2, Route 53, Lambda, S3, CloudFront). Esta combinación de habilidades me permite abordar proyectos desde múltiples perspectivas e entregar soluciones completas e robustas.
 
 Entre mis proyectos destacados se encuentran GitHub Open Source Explorer (una aplicación web moderna desarrollada con Nuxt 3 y Tailwind CSS) y una propuesta de estándar para verificación de solvencia en protocolos DeFi utilizando pruebas de conocimiento cero (zk). Mi enfoque en la optimización y las buenas prácticas ha sido constante en todos estos proyectos.
 
@@ -362,12 +360,6 @@ const cvOptions: CVOption[] = [
   }
 ];
 
-const jobPositionByLanguage = {
-  en: "Senior Frontend Developer",
-  es: "Desarrollador Frontend Senior",
-  pt: "Desenvolvedor Frontend Sênior"
-};
-
 // Define job positions for each language
 const jobPositionsMap = {
   en: [
@@ -400,6 +392,52 @@ const jobPositionsMap = {
     { label: "Engenheiro Frontend", value: "Engenheiro Frontend" },
     { label: "Engenheiro Blockchain", value: "Engenheiro Blockchain" }
   ]
+};
+
+const jobPositionByLanguage = {
+  en: "Senior Frontend Developer",
+  es: "Desarrollador Frontend Senior",
+  pt: "Desenvolvedor Frontend Sênior"
+};
+
+// Add language-specific text
+const languageTexts = {
+  en: {
+    greeting: "Dear",
+    closing: "Sincerely,",
+    placeholders: {
+      date: "January 15, 2024",
+      recipient: "Hiring Manager",
+      position: "HR Manager",
+      company: "Company Name",
+      address: "Company Address",
+      cityStateZip: "City, State, ZIP"
+    }
+  },
+  es: {
+    greeting: "Estimado/a",
+    closing: "Atentamente,",
+    placeholders: {
+      date: "15 de enero de 2024",
+      recipient: "Responsable de Contratación",
+      position: "Gerente de RRHH",
+      company: "Nombre de la Empresa",
+      address: "Dirección de la Empresa",
+      cityStateZip: "Ciudad, Estado, Código Postal"
+    }
+  },
+  pt: {
+    greeting: "Prezado(a)",
+    closing: "Atenciosamente,",
+    placeholders: {
+      date: "15 de janeiro de 2024",
+      recipient: "Responsável pela Contratação",
+      position: "Gerente de RH",
+      company: "Nome da Empresa",
+      address: "Endereço da Empresa",
+      cityStateZip: "Cidade, Estado, CEP"
+    }
+  }
 };
 
 function previewCV(cv: CVOption): void {
@@ -450,12 +488,8 @@ async function generateCoverLetterPDF() {
   try {
     const { jsPDF } = await import('jspdf');
     
-    const template = coverLetterTemplates[selectedCV.value.languageCode as keyof typeof coverLetterTemplates];
-    if (!template) throw new Error(`No hay plantilla disponible para idioma: ${selectedCV.value.languageCode}`);
-    
-    const isSpa = selectedCV.value.languageCode === 'es';
-    const greeting = isSpa ? 'Estimado/a' : 'Prezado(a)';
-    const closing = isSpa ? 'Atentamente,' : 'Atenciosamente';
+    const languageCode = selectedCV.value.languageCode as keyof typeof languageTexts;
+    const texts = languageTexts[languageCode];
     
     const pdf = new jsPDF({
       orientation: 'portrait',
@@ -473,11 +507,12 @@ async function generateCoverLetterPDF() {
     let yPos = margin;
     const lineHeight = 5;
     
+    // Header with name and date
     pdf.setFont('times', 'bold');
     pdf.text('Sean Luis Guada Rodriguez', margin, yPos);
     pdf.setFont('times', 'normal');
 
-    const dateText = coverLetterData.value.date || '[Fecha]';
+    const dateText = coverLetterData.value.date || new Date().toLocaleDateString();
     pdf.text(dateText, pageWidth - margin - pdf.getTextWidth(dateText), yPos);
     
     yPos += lineHeight;
@@ -485,41 +520,56 @@ async function generateCoverLetterPDF() {
     yPos += lineHeight;
     pdf.text('seanluis47@gmail.com', margin, yPos);
     yPos += lineHeight;
-    
     pdf.text('LinkedIn: sean-luisguada-rodriguez-4360a5bb', margin, yPos);
     yPos += lineHeight * 2;
     
-    pdf.setFont('times', 'bold');
-    pdf.text(coverLetterData.value.recipientName || '[Nombre del Destinatario]', margin, yPos);
-    pdf.setFont('times', 'normal');
+    // Recipient info (only if provided)
+    if (coverLetterData.value.recipientName) {
+      pdf.setFont('times', 'bold');
+      pdf.text(coverLetterData.value.recipientName, margin, yPos);
+      pdf.setFont('times', 'normal');
+      yPos += lineHeight;
+    }
+    
+    if (coverLetterData.value.recipientPosition) {
+      pdf.text(coverLetterData.value.recipientPosition, margin, yPos);
+      yPos += lineHeight;
+    }
+    
+    pdf.text(coverLetterData.value.companyName, margin, yPos);
     yPos += lineHeight;
     
-    pdf.text(coverLetterData.value.recipientPosition || '[Cargo]', margin, yPos);
-    yPos += lineHeight;
+    if (coverLetterData.value.address) {
+      pdf.text(coverLetterData.value.address, margin, yPos);
+      yPos += lineHeight;
+    }
     
-    pdf.text(coverLetterData.value.companyName || '[Empresa]', margin, yPos);
-    yPos += lineHeight;
+    if (coverLetterData.value.cityStateZip) {
+      pdf.text(coverLetterData.value.cityStateZip, margin, yPos);
+      yPos += lineHeight;
+    }
     
-    pdf.text(coverLetterData.value.address || '[Dirección]', margin, yPos);
-    yPos += lineHeight;
-    
-    pdf.text(coverLetterData.value.cityStateZip || '[Ciudad, Estado, Código Postal]', margin, yPos);
     yPos += lineHeight * 1.5;
     
-    pdf.text(`${greeting} ${coverLetterData.value.recipientName || '[Nombre del Destinatario]'}:`, margin, yPos);
+    // Greeting
+    const recipientName = coverLetterData.value.recipientName || texts.placeholders.recipient;
+    pdf.text(`${texts.greeting} ${recipientName}:`, margin, yPos);
     yPos += lineHeight * 1.5;
     
-    const bodyParagraphs = template
+    // Body paragraphs - get from template and process
+    const template = coverLetterTemplates[languageCode];
+    let processedContent = template
+      .replace(/\[Company\]|\[Empresa\]|\[Nome da Empresa\]/g, coverLetterData.value.companyName)
+      .replace(/\[Position\]|\[Puesto\]/g, coverLetterData.value.jobPosition || jobPositionByLanguage[languageCode]);
+    
+    const bodyParagraphs = processedContent
       .split('\n\n')
       .filter(p => p.trim())
       .filter(p => !p.startsWith('# '))
       .filter(p => !/^Sean Luis Guada Rodriguez/.test(p))
-      .filter(p => !/^\[Fecha\]|\[Data\]/.test(p))
-      .filter(p => !/^\[Nombre del Destinatario\]|\[Nome do Destinatário\]/.test(p))
-      .filter(p => !/^Estimado|^Prezado/.test(p))
-      .filter(p => !/^Atentamente|^Atenciosamente/.test(p))
-      .map(p => p.replace(/\[Empresa\]|\[Nome da Empresa\]/g, coverLetterData.value.companyName || '[Empresa]')
-               .replace(/\[Puesto\]/g, coverLetterData.value.jobPosition || 'Desarrollador Frontend Senior'));
+      .filter(p => !/^\[/.test(p))
+      .filter(p => !/^Dear|^Estimado|^Prezado/.test(p))
+      .filter(p => !/^Sincerely|^Atentamente|^Atenciosamente/.test(p));
     
     for (let paragraph of bodyParagraphs) {
       const lines = pdf.splitTextToSize(paragraph, textWidth);
@@ -530,11 +580,11 @@ async function generateCoverLetterPDF() {
       }
       
       pdf.text(lines, margin, yPos, { align: 'justify', maxWidth: textWidth });
-      yPos += lines.length * lineHeight + 2;
+      yPos += lines.length * lineHeight + 3;
     }
     
-    yPos += 3;
-    pdf.text(closing, margin, yPos);
+    yPos += 5;
+    pdf.text(texts.closing, margin, yPos);
     yPos += lineHeight * 2;
     
     pdf.setFont('times', 'bold');
