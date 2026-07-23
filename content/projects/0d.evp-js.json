@@ -1,0 +1,9 @@
+{
+  "name": "EVP-JS (Email Verification Protocol)",
+  "url": "https://github.com/aspect-evp/evp-js",
+  "description": "Experimental TypeScript implementation of the Email Verification Protocol (EVP) with issuer, verifier, core libs, and CLI — aligned with WICG/IETF drafts. Contribution to the aspect-evp ecosystem.",
+  "status": "WIP",
+  "opensource": true,
+  "thumbnail": "/projects/github.png",
+  "stack": ["TypeScript", "Node.js"]
+}

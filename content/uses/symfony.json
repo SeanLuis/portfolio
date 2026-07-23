@@ -1,7 +1,7 @@
 {
-    "name": "Symfony",
-    "description": "Framework PHP para o desenvolvimento de aplica\u00e7\u00f5es web complexas, proporcionando uma arquitetura robusta e componentes reutiliz\u00e1veis.",
-    "url": "https://symfony.com/",
-    "category": "backend",
-    "thumbnail": "/uses/symfony.png"
+  "name": "Symfony",
+  "description": "PHP framework for complex web applications with a robust architecture and reusable components.",
+  "url": "https://symfony.com/",
+  "category": "others",
+  "thumbnail": "/uses/symfony.png"
 }

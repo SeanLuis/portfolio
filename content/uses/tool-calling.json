@@ -1,0 +1,6 @@
+{
+  "name": "tool calling",
+  "description": "Letting models call external tools and APIs through typed schemas.",
+  "url": "https://platform.openai.com/docs/guides/function-calling",
+  "category": "ai"
+}

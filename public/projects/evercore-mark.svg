@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <mask id="donutMask">
+      <rect width="100" height="100" fill="black" />
+      <circle cx="50" cy="50" r="40" fill="white" />
+      <circle cx="50" cy="50" r="22" fill="black" />
+    </mask>
+  </defs>
+
+  <g mask="url(#donutMask)">
+    <g transform="translate(50, 50) rotate(-35)">
+      <!-- Left solid part -->
+      <rect x="-50" y="-50" width="50" height="100" fill="currentColor" />
+      
+      <!-- Rays -->
+      <g stroke="currentColor" stroke-width="3.5" stroke-linecap="butt">
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(12)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(24)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(36)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(48)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(60)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(72)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(84)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(96)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(108)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(120)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(132)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(144)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(156)" />
+        <line x1="0" y1="0" x2="0" y2="-50" transform="rotate(168)" />
+      </g>
+    </g>
+  </g>
+</svg>

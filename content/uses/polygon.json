@@ -1,7 +1,7 @@
 {
-    "name": "Polygon",
-    "description": "Uma plataforma de escalabilidade para blockchains de Ethereum, que oferece solu\u00e7\u00f5es de camada 2 para transa\u00e7\u00f5es r\u00e1pidas e baratas.",
-    "url": "https://polygon.technology/",
-    "category": "blockchain",
-    "thumbnail": "/uses/polygon.png"
+  "name": "Polygon",
+  "description": "Ethereum scaling platform offering Layer 2 solutions for fast, low-cost transactions.",
+  "url": "https://polygon.technology/",
+  "category": "blockchain",
+  "thumbnail": "/uses/polygon.png"
 }

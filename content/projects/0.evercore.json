@@ -1,0 +1,22 @@
+{
+  "name": "Evercore.sh",
+  "url": "https://evercore.sh",
+  "description": "Agentic API for governed evidence and verifiable compliance: permanent encrypted storage (Arweave), Hedera HCS, IPFS, business profiles, Console, SDK, API, and MCP hosts.",
+  "status": "Published",
+  "opensource": false,
+  "thumbnail": "/projects/evercore.png",
+  "stack": [
+    "TypeScript",
+    "React",
+    "Encore",
+    "Arweave",
+    "Hedera",
+    "IPFS",
+    "MongoDB",
+    "PostgreSQL",
+    "Redis",
+    "MCP",
+    "AWS",
+    "Docker"
+  ]
+}

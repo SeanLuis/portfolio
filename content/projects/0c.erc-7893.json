@@ -1,0 +1,9 @@
+{
+  "name": "ERC-7893 — DeFi Protocol Solvency Proof",
+  "url": "https://eips.ethereum.org/EIPS/eip-7893",
+  "description": "Ethereum Request for Comment (Final Standards Track) standardizing on-chain solvency proofs for DeFi protocols: assets/liabilities, health factor, history, and risk alerts. Author: Sean Luis Guada Rodríguez.",
+  "status": "Final",
+  "opensource": true,
+  "thumbnail": "/projects/ethereum.png",
+  "stack": ["Solidity", "Ethereum"]
+}

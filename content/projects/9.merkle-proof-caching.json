@@ -1,7 +1,9 @@
 {
   "name": "Ethereum Merkle Proof Caching",
   "url": "https://seanluis.github.io/eip-merkle-proof-caching/",
-  "description": "Proposta inicial explorando possíveis otimizações de cache para verificações de provas Merkle em certos cenários, baseada no trabalho da comunidade Ethereum.",
+  "description": "Early proposal exploring cache optimizations for Merkle proof verification in certain scenarios, building on Ethereum community work.",
   "status": "Draft",
-  "opensource": true
+  "opensource": true,
+  "thumbnail": "/projects/ethereum.png",
+  "stack": ["Ethereum", "Markdown"]
 }

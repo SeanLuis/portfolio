@@ -15,7 +15,7 @@
         <input 
           type="search" 
           class="block w-full pl-8 pr-3 py-1.5 text-xs border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 focus:ring-1 focus:ring-blue-500 text-gray-700 dark:text-gray-200"
-          placeholder="Buscar dirección, hash o bloque..." 
+          placeholder="Search address, hash, or block..." 
           v-model="searchQuery"
         />
       </div>
@@ -44,7 +44,7 @@
     <div class="grid grid-cols-4 text-xs divide-x divide-gray-200 dark:divide-gray-800 border-b border-gray-200 dark:border-gray-800">
       <div class="p-3 flex flex-col justify-center">
         <div class="flex justify-between items-baseline mb-1">
-          <span class="text-gray-500 dark:text-gray-400 text-2xs">Precio ETH</span>
+          <span class="text-gray-500 dark:text-gray-400 text-2xs">ETH price</span>
           <span 
             :class="stats.priceChange >= 0 ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'"
             class="text-2xs"
@@ -66,7 +66,7 @@
       </div>
       
       <div class="p-3 flex flex-col justify-center">
-        <span class="text-gray-500 dark:text-gray-400 text-2xs mb-1">Último Bloque</span>
+        <span class="text-gray-500 dark:text-gray-400 text-2xs mb-1">Latest block</span>
         <span class="font-medium text-gray-900 dark:text-white">#{{ stats.latestBlock }}</span>
       </div>
       
@@ -84,7 +84,7 @@
     <!-- Main Content -->
     <div v-if="activeTab === 'blocks'" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
       <div class="p-4 border-b dark:border-gray-700">
-        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Bloques recientes</h3>
+        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Recent blocks</h3>
       </div>
       
       <div class="overflow-x-auto">
@@ -92,19 +92,19 @@
           <thead>
             <tr>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Bloque
+                Block
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Minado
+                Mined
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Txns
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Gas utilizado
+                Gas used
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Recompensa
+                Reward
               </th>
             </tr>
           </thead>
@@ -132,14 +132,14 @@
       
       <div class="p-4 border-t dark:border-gray-700 flex justify-center">
         <button class="px-3 py-1 text-sm text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors">
-          Cargar más
+          Load more
         </button>
       </div>
     </div>
     
     <div v-if="activeTab === 'txs'" class="bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700">
       <div class="p-4 border-b dark:border-gray-700">
-        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Transacciones recientes</h3>
+        <h3 class="text-sm font-medium text-gray-900 dark:text-white">Recent transactions</h3>
       </div>
       
       <div class="overflow-x-auto">
@@ -150,16 +150,16 @@
                 Hash
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Bloque
+                Block
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                De
+                From
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                A
+                To
               </th>
               <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
-                Valor
+                Value
               </th>
             </tr>
           </thead>
@@ -202,7 +202,7 @@
       
       <div class="p-4 border-t dark:border-gray-700 flex justify-center">
         <button class="px-3 py-1 text-sm text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 rounded-md transition-colors">
-          Cargar más
+          Load more
         </button>
       </div>
     </div>
@@ -214,8 +214,8 @@ import { ref, reactive } from 'vue';
 
 // Tabs con iconos
 const tabs = [
-  { id: 'blocks', name: 'Bloques' },
-  { id: 'txs', name: 'Transacciones' }
+  { id: 'blocks', name: 'Blocks' },
+  { id: 'txs', name: 'Transactions' }
 ];
 const activeTab = ref('blocks');
 const searchQuery = ref('');
@@ -234,35 +234,35 @@ const stats = reactive({
 const blocks = [
   { 
     number: '18235421', 
-    time: '10s atrás', 
+    time: '10s ago', 
     transactions: 156, 
     gasUsed: '14.28M', 
     reward: '0.052' 
   },
   { 
     number: '18235420', 
-    time: '23s atrás', 
+    time: '23s ago', 
     transactions: 132, 
     gasUsed: '12.45M', 
     reward: '0.043' 
   },
   { 
     number: '18235419', 
-    time: '36s atrás', 
+    time: '36s ago', 
     transactions: 189, 
     gasUsed: '15.42M', 
     reward: '0.061' 
   },
   { 
     number: '18235418', 
-    time: '48s atrás', 
+    time: '48s ago', 
     transactions: 112, 
     gasUsed: '10.14M', 
     reward: '0.039' 
   },
   { 
     number: '18235417', 
-    time: '1m atrás', 
+    time: '1m ago', 
     transactions: 165, 
     gasUsed: '13.78M', 
     reward: '0.056' 

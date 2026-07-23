@@ -1,0 +1,21 @@
+{
+  "name": "Berea AI",
+  "url": "https://berea.app",
+  "description": "Coming soon: multi-tenant knowledge agents with RAG, document and page citations, human-approved tool calling, Arena mode, and an embeddable widget.",
+  "status": "Coming Soon",
+  "opensource": false,
+  "thumbnail": "/projects/berea.png",
+  "stack": [
+    "Python",
+    "FastAPI",
+    "React",
+    "TanStack Start",
+    "TypeScript",
+    "Qdrant",
+    "PostgreSQL",
+    "Redis",
+    "OpenAI",
+    "MCP",
+    "Docker"
+  ]
+}

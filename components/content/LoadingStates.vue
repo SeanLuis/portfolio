@@ -110,7 +110,7 @@
           ]"
         >
           <Icon v-if="btn1Loading" name="uil:spinner" class="animate-spin mr-1.5 w-3.5 h-3.5" />
-          <span>{{ btn1Loading ? 'Cargando...' : 'Cargar' }}</span>
+          <span>{{ btn1Loading ? 'Loading...' : 'Load' }}</span>
         </button>
         
         <button 

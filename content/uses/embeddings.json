@@ -1,0 +1,6 @@
+{
+  "name": "embeddings",
+  "description": "Vector representations of text for semantic search and retrieval.",
+  "url": "https://platform.openai.com/docs/guides/embeddings",
+  "category": "ai"
+}

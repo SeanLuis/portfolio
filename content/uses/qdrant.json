@@ -1,0 +1,6 @@
+{
+  "name": "Qdrant",
+  "description": "Vector database used for semantic search in RAG pipelines.",
+  "url": "https://qdrant.tech/",
+  "category": "data-cloud"
+}

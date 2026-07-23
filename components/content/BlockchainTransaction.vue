@@ -1,148 +1,225 @@
 <template>
-  <div class="px-4 py-5 bg-white dark:bg-gray-900 w-full">
-    <div class="flex flex-col space-y-6">
-      <!-- Header with Controls -->
-      <div class="flex flex-wrap items-center justify-between gap-3">
-        <h2 class="text-base font-medium text-gray-900 dark:text-white">Blockchain Visualizer</h2>
-        <div class="flex gap-3">
-          <button 
-            @click="addTransaction" 
-            class="bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-300 py-1.5 px-3 rounded-md text-xs font-medium transition-colors duration-200 flex items-center"
-          >
-            <svg class="mr-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
-              <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-            </svg>
-            Nueva Transacción
-          </button>
-          <button 
-            @click="mineBlock" 
-            :disabled="pendingTransactions.length === 0"
-            :class="[
-              'py-1.5 px-3 rounded-md text-xs font-medium transition-colors duration-200 flex items-center',
-              pendingTransactions.length === 0 
-                ? 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 cursor-not-allowed' 
-                : 'bg-gray-800 hover:bg-black text-white dark:bg-blue-600 dark:hover:bg-blue-700 cursor-pointer'
-            ]"
-          >
-            <svg class="mr-1.5 w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
-            </svg>
-            Minar Bloque
-          </button>
+  <div class="overflow-hidden bg-white dark:bg-gray-900 w-full">
+    <!-- Toolbar -->
+    <div class="px-4 py-3 border-b border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2.5 min-w-0">
+        <div class="flex h-7 w-7 items-center justify-center rounded-md bg-gray-100 dark:bg-gray-800 ring-1 ring-gray-200 dark:ring-gray-700">
+          <Icon name="uil:link" class="w-3.5 h-3.5 text-gray-600 dark:text-gray-300" />
+        </div>
+        <div class="min-w-0">
+          <h2 class="text-sm font-medium text-gray-900 dark:text-white truncate">
+            Transaction Visualizer
+          </h2>
+          <p class="text-2xs text-gray-500 dark:text-gray-400">
+            Simulated chain · {{ blocks.length + 1 }} blocks · {{ recentTransactions.length }} recent txs
+          </p>
         </div>
       </div>
-      
-      <!-- Blockchain Visualization -->
+
+      <div class="flex items-center gap-2">
+        <button
+          type="button"
+          @click="addTransaction"
+          class="inline-flex items-center gap-1.5 rounded-md border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-2.5 py-1.5 text-xs font-medium text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+        >
+          <Icon name="uil:plus" class="w-3.5 h-3.5" />
+          New transaction
+        </button>
+        <button
+          type="button"
+          @click="mineBlock"
+          :disabled="pendingTransactions.length === 0 || isMining"
+          class="inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-medium transition-colors"
+          :class="
+            pendingTransactions.length === 0 || isMining
+              ? 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 cursor-not-allowed'
+              : 'bg-gray-900 text-white hover:bg-black dark:bg-blue-600 dark:hover:bg-blue-500 cursor-pointer'
+          "
+        >
+          <Icon
+            :name="isMining ? 'svg-spinners:ring-resize' : 'uil:cube'"
+            class="w-3.5 h-3.5"
+          />
+          {{ isMining ? 'Mining…' : 'Mine block' }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats strip -->
+    <div class="grid grid-cols-3 divide-x divide-gray-200 dark:divide-gray-800 border-b border-gray-200 dark:border-gray-800 text-xs">
+      <div class="px-4 py-2.5">
+        <p class="text-2xs text-gray-500 dark:text-gray-400 mb-0.5">Chain height</p>
+        <p class="font-medium text-gray-900 dark:text-white tabular-nums">{{ blocks.length + 1 }}</p>
+      </div>
+      <div class="px-4 py-2.5">
+        <p class="text-2xs text-gray-500 dark:text-gray-400 mb-0.5">Mempool</p>
+        <p class="font-medium text-gray-900 dark:text-white tabular-nums">
+          {{ pendingTransactions.length }}
+          <span class="text-2xs font-normal text-gray-400">pending</span>
+        </p>
+      </div>
+      <div class="px-4 py-2.5">
+        <p class="text-2xs text-gray-500 dark:text-gray-400 mb-0.5">Status</p>
+        <p class="font-medium flex items-center gap-1.5 text-gray-900 dark:text-white">
+          <span
+            class="inline-block h-1.5 w-1.5 rounded-full"
+            :class="isMining ? 'bg-amber-500 animate-pulse' : 'bg-emerald-500'"
+          />
+          {{ isMining ? 'Mining' : 'Idle' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Chain visualization -->
+    <div class="px-4 py-4">
+      <div class="flex items-center justify-between mb-3">
+        <h3 class="text-xs font-medium text-gray-700 dark:text-gray-300">Chain</h3>
+        <span class="text-2xs text-gray-400 dark:text-gray-500">Scroll horizontally</span>
+      </div>
+
       <div class="w-full overflow-x-auto pb-1 scrollbar-hide">
-        <div class="flex pb-2 pt-1">
-          <!-- Genesis Block -->
+        <div class="flex items-stretch py-1 min-w-min">
+          <!-- Genesis -->
           <div class="flex-shrink-0">
-            <div class="border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/50 p-3 rounded-md w-44 min-w-[11rem] transition-shadow hover:shadow-sm">
-              <div class="flex justify-between items-center mb-2">
-                <div class="flex items-center bg-gray-200/70 dark:bg-gray-700/70 text-xs px-1.5 rounded-sm">
-                  <span class="font-medium text-gray-700 dark:text-gray-300">Bloque #0</span>
-                </div>
-                <span class="text-2xs font-medium text-gray-400 dark:text-gray-500">Genesis</span>
+            <div class="w-48 rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800/40 p-3 transition-shadow hover:shadow-sm">
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="inline-flex items-center rounded px-1.5 py-0.5 text-2xs font-medium bg-gray-200/80 dark:bg-gray-700 text-gray-700 dark:text-gray-200">
+                  Block #0
+                </span>
+                <span class="text-2xs text-gray-400 uppercase tracking-wide">Genesis</span>
               </div>
-              <div class="font-mono text-2xs mb-1 text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700 pb-1.5">
+              <div class="font-mono text-2xs text-gray-500 dark:text-gray-400 space-y-1 border-b border-gray-200 dark:border-gray-700 pb-2 mb-2">
                 <div class="truncate">
-                  <span class="text-gray-400 dark:text-gray-500">hash:</span> {{ genesisBlock.hash.substring(0, 14) }}...
+                  <span class="text-gray-400">hash</span>
+                  {{ shortHash(genesisBlock.hash) }}
+                </div>
+                <div class="truncate">
+                  <span class="text-gray-400">prev</span>
+                  {{ shortHash(genesisBlock.previousHash) }}
                 </div>
               </div>
               <div class="flex justify-between text-2xs text-gray-500 dark:text-gray-400">
-                <span>{{ new Date(genesisBlock.timestamp).toLocaleTimeString() }}</span>
-                <span>0 tx</span>
+                <span>{{ formatTime(genesisBlock.timestamp) }}</span>
+                <span>0 txs</span>
               </div>
             </div>
           </div>
-          
-          <!-- Mined Blocks -->
-          <div 
-            v-for="(block, index) in blocks" 
-            :key="index"
-            class="flex-shrink-0 flex items-center group"
+
+          <!-- Mined blocks -->
+          <div
+            v-for="(block, index) in blocks"
+            :key="block.hash"
+            class="flex-shrink-0 flex items-center"
           >
-            <!-- Connector - Ajustado para conectar mejor los bloques -->
-            <div class="w-5 h-[1px] bg-gray-300 dark:bg-gray-700 self-center"></div>
-            
-            <!-- Block -->
+            <div class="w-4 h-px bg-gray-300 dark:bg-gray-700 self-center" aria-hidden="true" />
             <div
-              class="border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 p-3 rounded-md w-44 min-w-[11rem] transition-all hover:shadow-sm"
+              class="w-48 rounded-lg border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 p-3 transition-all hover:shadow-sm"
+              :class="{ 'ring-1 ring-blue-500/30 animate-block-in': block.isNew }"
             >
-              <div class="flex justify-between items-center mb-2">
-                <div class="flex items-center bg-blue-100 dark:bg-blue-900/30 text-xs px-1.5 rounded-sm">
-                  <span class="font-medium text-blue-700 dark:text-blue-400">Bloque #{{ index + 1 }}</span>
-                </div>
-                <span class="text-2xs font-medium text-blue-400 dark:text-blue-500">{{ block.transactions.length }} txs</span>
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="inline-flex items-center rounded px-1.5 py-0.5 text-2xs font-medium bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400">
+                  Block #{{ index + 1 }}
+                </span>
+                <span class="text-2xs font-medium text-blue-600/80 dark:text-blue-400/80 tabular-nums">
+                  {{ block.transactions.length }} txs
+                </span>
               </div>
-              <div class="font-mono text-2xs mb-1 text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-700 pb-1.5">
+              <div class="font-mono text-2xs text-gray-500 dark:text-gray-400 space-y-1 border-b border-gray-200 dark:border-gray-700 pb-2 mb-2">
                 <div class="truncate">
-                  <span class="text-gray-400 dark:text-gray-500">hash:</span> {{ block.hash.substring(0, 14) }}...
+                  <span class="text-gray-400">hash</span>
+                  {{ shortHash(block.hash) }}
                 </div>
                 <div class="truncate">
-                  <span class="text-gray-400 dark:text-gray-500">prev:</span> {{ block.previousHash.substring(0, 14) }}...
+                  <span class="text-gray-400">prev</span>
+                  {{ shortHash(block.previousHash) }}
                 </div>
               </div>
               <div class="flex justify-between text-2xs text-gray-500 dark:text-gray-400">
-                <span>{{ new Date(block.timestamp).toLocaleTimeString() }}</span>
-                <span>nonce: {{ block.nonce }}</span>
+                <span>{{ formatTime(block.timestamp) }}</span>
+                <span class="tabular-nums">nonce {{ block.nonce }}</span>
               </div>
             </div>
           </div>
-          
-          <!-- Pending Transaction Pool (if any) -->
-          <div v-if="pendingTransactions.length > 0" class="flex-shrink-0 flex items-center">
-            <!-- Connector -->
-            <div class="w-5 h-[1px] border-t border-dashed border-gray-300 dark:border-gray-700 self-center"></div>
-            
-            <!-- Pending Pool -->
-            <div class="border border-gray-200 dark:border-gray-800 bg-amber-50 dark:bg-amber-900/10 p-3 rounded-md w-44 min-w-[11rem] transition-all">
-              <div class="flex justify-between items-center mb-2">
-                <div class="flex items-center bg-amber-100 dark:bg-amber-900/30 text-xs px-1.5 rounded-sm">
-                  <span class="font-medium text-amber-700 dark:text-amber-500">Pendientes</span>
-                </div>
-                <span class="bg-amber-500/10 text-amber-700 dark:text-amber-500 text-2xs px-1.5 py-0.5 rounded-full">
+
+          <!-- Pending mempool -->
+          <div
+            v-if="pendingTransactions.length > 0"
+            class="flex-shrink-0 flex items-center"
+          >
+            <div
+              class="w-4 border-t border-dashed border-gray-300 dark:border-gray-600 self-center"
+              aria-hidden="true"
+            />
+            <div class="w-48 rounded-lg border border-amber-200/80 dark:border-amber-900/40 bg-amber-50/60 dark:bg-amber-950/20 p-3">
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="inline-flex items-center rounded px-1.5 py-0.5 text-2xs font-medium bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-400">
+                  Mempool
+                </span>
+                <span class="inline-flex items-center rounded-full bg-amber-500/10 px-1.5 py-0.5 text-2xs font-medium text-amber-700 dark:text-amber-400 tabular-nums">
                   {{ pendingTransactions.length }}
                 </span>
               </div>
-              <div class="mt-2 space-y-1.5">
-                <div v-for="(tx, idx) in pendingTransactions.slice(0, 2)" :key="idx" 
-                     class="bg-amber-200/20 dark:bg-amber-700/20 h-1.5 rounded-sm"></div>
-                <div v-if="pendingTransactions.length > 2" 
-                     class="text-2xs text-amber-600 dark:text-amber-500/70 text-center">+{{ pendingTransactions.length - 2 }} más</div>
+              <div class="space-y-1.5">
+                <div
+                  v-for="(tx, idx) in pendingTransactions.slice(0, 3)"
+                  :key="tx.id"
+                  class="h-1.5 rounded-sm bg-amber-300/40 dark:bg-amber-700/30"
+                  :style="{ width: `${70 + (idx * 10)}%` }"
+                />
+                <p
+                  v-if="pendingTransactions.length > 3"
+                  class="text-2xs text-amber-700/80 dark:text-amber-500/80 text-center pt-0.5"
+                >
+                  +{{ pendingTransactions.length - 3 }} more
+                </p>
+                <p
+                  v-else
+                  class="text-2xs text-amber-700/70 dark:text-amber-500/70 pt-0.5"
+                >
+                  Awaiting next block
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
-      <!-- Transaction List -->
-      <div>
-        <div class="flex justify-between items-center mb-3">
-          <h3 class="text-xs font-medium text-gray-700 dark:text-gray-400">Transacciones recientes</h3>
-          <span class="text-2xs bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 px-2 py-0.5 rounded-full">
-            {{ recentTransactions.length }}
-          </span>
+    </div>
+
+    <!-- Recent transactions -->
+    <div class="px-4 pb-4">
+      <div class="rounded-lg border border-gray-200 dark:border-gray-800 overflow-hidden">
+        <div class="flex items-center justify-between px-3 py-2 border-b border-gray-200 dark:border-gray-800 bg-gray-50/80 dark:bg-gray-800/40">
+          <h3 class="text-xs font-medium text-gray-700 dark:text-gray-300">Recent transactions</h3>
+          <span class="text-2xs text-gray-400 tabular-nums">{{ recentTransactions.length }}</span>
         </div>
-        <div class="space-y-1.5 max-h-[140px] overflow-y-auto pr-1 scrollbar-thin">
-          <div 
-            v-for="(tx, idx) in recentTransactions" 
-            :key="idx"
-            class="bg-white dark:bg-gray-800/50 p-2 rounded-md border border-gray-100 dark:border-gray-800 text-xs transition-all"
-            :class="{ 'animate-highlight-once': tx.isNew }"
+
+        <div class="max-h-[160px] overflow-y-auto divide-y divide-gray-100 dark:divide-gray-800 scrollbar-thin">
+          <div
+            v-for="tx in recentTransactions"
+            :key="tx.id"
+            class="px-3 py-2.5 text-xs transition-colors"
+            :class="{ 'bg-emerald-50/50 dark:bg-emerald-950/20 animate-highlight-once': tx.isNew }"
           >
-            <div class="flex justify-between mb-1">
-              <span class="font-mono text-gray-600 dark:text-gray-400">{{ tx.id.substring(0, 6) }}...</span>
-              <span class="font-medium text-green-600 dark:text-green-500">{{ tx.amount }} ETH</span>
+            <div class="flex items-center justify-between gap-3 mb-1">
+              <span class="font-mono text-gray-600 dark:text-gray-400 truncate">
+                {{ shortHash(tx.id) }}
+              </span>
+              <span class="font-medium text-emerald-600 dark:text-emerald-400 tabular-nums whitespace-nowrap">
+                {{ tx.amount }} ETH
+              </span>
             </div>
-            <div class="flex justify-between text-gray-400 dark:text-gray-500 text-2xs">
-              <span class="truncate max-w-[45%]">De: {{ tx.sender.substring(0, 10) }}...</span>
-              <span class="truncate max-w-[45%]">Para: {{ tx.recipient.substring(0, 10) }}...</span>
+            <div class="flex items-center justify-between gap-2 text-2xs text-gray-400 dark:text-gray-500 font-mono">
+              <span class="truncate">From {{ shortAddr(tx.sender) }}</span>
+              <Icon name="uil:arrow-right" class="w-3 h-3 flex-shrink-0 text-gray-300 dark:text-gray-600" />
+              <span class="truncate text-right">To {{ shortAddr(tx.recipient) }}</span>
             </div>
           </div>
-          
-          <div v-if="recentTransactions.length === 0" class="text-center py-3 text-2xs text-gray-400 dark:text-gray-500">
-            No hay transacciones recientes
+
+          <div
+            v-if="recentTransactions.length === 0"
+            class="px-3 py-8 text-center text-2xs text-gray-400 dark:text-gray-500"
+          >
+            No recent transactions
           </div>
         </div>
       </div>
@@ -153,188 +230,182 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 
-// Direcciones reales del ecosistema Ethereum para mayor realismo
 const wallets = [
-  '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', // WETH
-  '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D', // Uniswap Router
-  '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984', // UNI Token
-  '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', // USDC
-  '0xdAC17F958D2ee523a2206206994597C13D831ec7'  // USDT
+  '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2',
+  '0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D',
+  '0x1f9840a85d5aF5bf1D1762F925BDADdC4201F984',
+  '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',
+  '0xdAC17F958D2ee523a2206206994597C13D831ec7',
 ];
 
-// Simulación de hash basada en caracteres alfanuméricos aleatorios
-const calculateHash = (block) => {
-  // Simulamos un hash real de Ethereum (64 caracteres hexadecimales)
+const calculateHash = () => {
   const characters = '0123456789abcdef';
-  let hash = '0x';
-  
-  // Generamos los primeros caracteres para simular un hash con ceros iniciales (prueba de trabajo)
-  hash += '00';
-  
-  // Generamos el resto del hash (62 caracteres)
+  let hash = '0x00';
   for (let i = 0; i < 62; i++) {
     hash += characters.charAt(Math.floor(Math.random() * characters.length));
   }
-  
   return hash;
 };
 
-// Generador de ID único para transacciones
 const generateId = () => {
-  // Formato similar a un hash de transacción Ethereum
   const characters = '0123456789abcdef';
   let hash = '0x';
-  
-  // Generamos 64 caracteres hexadecimales
   for (let i = 0; i < 64; i++) {
     hash += characters.charAt(Math.floor(Math.random() * characters.length));
   }
-  
   return hash;
 };
 
-// Blockchain data structure
+const shortHash = (value) => `${value.substring(0, 10)}…${value.slice(-4)}`;
+const shortAddr = (value) => `${value.substring(0, 6)}…${value.slice(-4)}`;
+
+const formatTime = (timestamp) =>
+  new Intl.DateTimeFormat('en-US', {
+    hour: 'numeric',
+    minute: '2-digit',
+    second: '2-digit',
+  }).format(new Date(timestamp));
+
 const genesisBlock = ref({
   index: 0,
-  timestamp: Date.now() - 120000, // 2 minutos atrás para más contexto
+  timestamp: Date.now() - 120000,
   transactions: [],
   previousHash: '0x0000000000000000000000000000000000000000000000000000000000000000',
-  // Hash real del bloque génesis de Ethereum
   hash: '0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3',
-  nonce: 42
+  nonce: 42,
 });
 
 const blocks = ref([]);
 const pendingTransactions = ref([]);
 const recentTransactions = ref([]);
+const isMining = ref(false);
 
-// Generate a new transaction
 const createTransaction = () => {
-  // Random sender and recipient
   const senderIdx = Math.floor(Math.random() * wallets.length);
   let recipientIdx;
   do {
     recipientIdx = Math.floor(Math.random() * wallets.length);
   } while (recipientIdx === senderIdx);
-  
-  // Random amount (0.01 to 3 ETH) con dos decimales para mayor realismo
-  const amount = parseFloat((Math.random() * 2.99 + 0.01).toFixed(2));
-  
-  // Crear transacción con formato realista
+
   return {
     id: generateId(),
     sender: wallets[senderIdx],
     recipient: wallets[recipientIdx],
-    amount,
+    amount: parseFloat((Math.random() * 2.99 + 0.01).toFixed(2)),
     timestamp: Date.now(),
-    gasUsed: Math.floor(Math.random() * 50000) + 21000, // Gas de una tx básica ETH
-    isNew: true
+    gasUsed: Math.floor(Math.random() * 50000) + 21000,
+    isNew: true,
   };
 };
 
-// Add a transaction to pending pool
 const addTransaction = () => {
   const newTx = createTransaction();
-  
-  // Añadir a transacciones pendientes
   pendingTransactions.value.push(newTx);
-  
-  // Añadir al historial de transacciones recientes 
   recentTransactions.value.unshift(newTx);
-  
-  // Mantener solo las 5 transacciones más recientes
   if (recentTransactions.value.length > 5) {
     recentTransactions.value.pop();
   }
-  
-  // Quitar el estado "new" después de la animación
   setTimeout(() => {
     newTx.isNew = false;
   }, 2000);
 };
 
-// Simular minería con prueba de trabajo
-const mineBlock = () => {
-  if (pendingTransactions.value.length === 0) return;
-  
-  const previousBlock = blocks.value.length > 0 ? blocks.value[blocks.value.length - 1] : genesisBlock.value;
-  
-  // Create new block
+const mineBlock = async () => {
+  if (pendingTransactions.value.length === 0 || isMining.value) return;
+
+  isMining.value = true;
+  await new Promise((resolve) => setTimeout(resolve, 650));
+
+  const previousBlock =
+    blocks.value.length > 0
+      ? blocks.value[blocks.value.length - 1]
+      : genesisBlock.value;
+
   const newBlock = {
     index: previousBlock.index + 1,
     timestamp: Date.now(),
     transactions: [...pendingTransactions.value],
     previousHash: previousBlock.hash,
-    nonce: Math.floor(Math.random() * 10000) + 1000 // Simular nonce para PoW
+    nonce: Math.floor(Math.random() * 10000) + 1000,
+    hash: calculateHash(),
+    isNew: true,
   };
-  
-  // Hash del bloque
-  newBlock.hash = calculateHash(newBlock);
-  
-  // Añadir el bloque y limpiar transacciones pendientes
+
   blocks.value.push(newBlock);
   pendingTransactions.value = [];
-  
-  // Agregar transacciones al historial reciente (si no estaban ya)
+
   for (const tx of newBlock.transactions) {
-    if (!recentTransactions.value.some(existing => existing.id === tx.id)) {
-      tx.isNew = false; // Ya no son nuevas al estar minadas
+    if (!recentTransactions.value.some((existing) => existing.id === tx.id)) {
+      tx.isNew = false;
       recentTransactions.value.unshift(tx);
     }
   }
-  
-  // Limitar historial de transacciones
+
   if (recentTransactions.value.length > 5) {
     recentTransactions.value = recentTransactions.value.slice(0, 5);
   }
+
+  isMining.value = false;
+  setTimeout(() => {
+    newBlock.isNew = false;
+  }, 1200);
 };
 
-// Initialize with some data
 onMounted(() => {
-  // Agregar un bloque inicial con algunas transacciones
-  // para que la visualización no empiece vacía
   addTransaction();
   addTransaction();
-  
-  // Minar un bloque para iniciar
   setTimeout(() => {
     mineBlock();
   }, 800);
-  
-  // Añadir otra transacción para dejar algo pendiente
   setTimeout(() => {
     addTransaction();
-  }, 1500);
+  }, 1600);
 });
 </script>
 
 <style scoped>
 @keyframes highlight-once {
-  0% { background-color: rgba(16, 185, 129, 0.05); }
-  30% { background-color: rgba(16, 185, 129, 0.12); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(16, 185, 129, 0.08);
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes block-in {
+  from {
+    opacity: 0.6;
+    transform: translateX(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .animate-highlight-once {
   animation: highlight-once 2s ease-out;
 }
 
-.text-2xs {
-  font-size: 0.65rem;
+.animate-block-in {
+  animation: block-in 0.45s ease-out;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+.text-2xs {
+  font-size: 0.65rem;
+  line-height: 1rem;
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-/* Thin scrollbar style */
 .scrollbar-thin::-webkit-scrollbar {
   width: 4px;
 }
@@ -344,11 +415,11 @@ onMounted(() => {
 }
 
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgba(156, 163, 175, 0.3);
+  background-color: rgba(156, 163, 175, 0.35);
   border-radius: 9999px;
 }
 
 .dark .scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgba(75, 85, 99, 0.5);
+  background-color: rgba(75, 85, 99, 0.55);
 }
 </style>

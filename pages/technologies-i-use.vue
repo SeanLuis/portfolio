@@ -2,22 +2,30 @@
   <main class="min-h-screen">
     <AppHeader
       class="mb-12"
-      title="Tecnologias que uso"
+      title="Technologies I use"
     />
     <div class="space-y-24">
       <ul class="space-y-8">
-        <AppUsesHeader title="Front-end" />
+        <AppUsesHeader title="Frontend" />
         <AppUsesItem v-for="(item, id) in frontend" :key="id" :item="item" />
       </ul>
       <ul class="space-y-8">
-        <AppUsesHeader title="Back-end" />
+        <AppUsesHeader title="Backend" />
         <AppUsesItem v-for="(item, id) in backend" :key="id" :item="item" />
       </ul>
       <ul class="space-y-8">
-        <AppUsesHeader title="Blockchain" />
+        <AppUsesHeader title="AI" />
+        <AppUsesItem v-for="(item, id) in ai" :key="id" :item="item" />
+      </ul>
+      <ul class="space-y-8">
+        <AppUsesHeader title="Blockchain / Trust" />
         <AppUsesItem v-for="(item, id) in blockchain" :key="id" :item="item" />
       </ul>
       <ul class="space-y-8">
+        <AppUsesHeader title="Data & Cloud" />
+        <AppUsesItem v-for="(item, id) in dataCloud" :key="id" :item="item" />
+      </ul>
+      <ul v-if="others.length" class="space-y-8">
         <AppUsesHeader title="Others" />
         <AppUsesItem v-for="(item, id) in others" :key="id" :item="item" />
       </ul>
@@ -27,16 +35,19 @@
 
 <script setup>
 const description =
-  "Tecnologias que uso";
+  "Curated stack across frontend, backend, AI, blockchain/trust, and data & cloud.";
 useSeoMeta({
-  title: "Tecnologias que uso | Sean Rodriguez",
+  title: "Technologies I use | Sean Rodriguez",
   description,
 });
 const { data: items } = await useAsyncData("uses", () =>
   queryContent("/uses").find()
 );
-const frontend = items.value.filter((item) => item.category === "frontend");
-const backend = items.value.filter((item) => item.category === "backend");
-const blockchain = items.value.filter((item) => item.category === "blockchain");
-const others = items.value.filter((item) => item.category === "others");
+const list = items.value || [];
+const frontend = list.filter((item) => item.category === "frontend");
+const backend = list.filter((item) => item.category === "backend");
+const ai = list.filter((item) => item.category === "ai");
+const blockchain = list.filter((item) => item.category === "blockchain");
+const dataCloud = list.filter((item) => item.category === "data-cloud");
+const others = list.filter((item) => item.category === "others");
 </script>

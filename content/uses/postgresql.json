@@ -1,0 +1,6 @@
+{
+  "name": "PostgreSQL",
+  "description": "Relational database used for application metadata, auth, and transactional data.",
+  "url": "https://www.postgresql.org/",
+  "category": "data-cloud"
+}

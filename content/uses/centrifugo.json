@@ -1,7 +1,7 @@
 {
   "name": "Centrifugo",
-  "description": "Centrifugo é um servidor de mensagens em tempo real, que permite a implementação de funcionalidades como chats, notificações em tempo real e atualizações ao vivo.",
+  "description": "Real-time messaging server for chats, live notifications, and live updates.",
   "url": "https://centrifugal.dev/",
-  "category": "backend",
+  "category": "others",
   "thumbnail": "/uses/centrifugo.png"
 }

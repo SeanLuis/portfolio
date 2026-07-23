@@ -1,0 +1,6 @@
+{
+  "name": "RAG",
+  "description": "Pattern that retrieves private documents before generating an answer.",
+  "url": "https://www.anthropic.com/engineering/retrieval-augmented-generation",
+  "category": "ai"
+}

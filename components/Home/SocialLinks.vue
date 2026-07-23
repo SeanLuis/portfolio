@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="uppercase text-xs font-semibold text-gray-400 mb-4">ENCONTRE ME EM</h2>
+    <h2 class="uppercase text-xs font-semibold text-gray-400 mb-4">Find me on</h2>
     <div class="space-y-5">
       <NuxtLink
         v-for="link in links"
@@ -31,7 +31,7 @@ const links = [
   },
   {
     name: "Linkedin",
-    url: "https://www.linkedin.com/in/sean-luis-guada-rodr%C3%ADguez-4360a5bb/",
+    url: "https://www.linkedin.com/in/sean-luis-guada-rodriguez-4360a5bb/",
     icon: "mdi:linkedin",
   }
 ];

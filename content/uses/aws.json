@@ -1,7 +1,7 @@
 {
-    "name": "Docker",
-    "description": "Plataforma de cont\u00eaineres que facilita a cria\u00e7\u00e3o, deploy e execu\u00e7\u00e3o de aplica\u00e7\u00f5es em ambientes isolados.",
-    "url": "https://www.docker.com/",
-    "category": "others",
-    "thumbnail": "/uses/docker.png"
+  "name": "AWS",
+  "description": "Suite of cloud computing services including storage, compute, and databases.",
+  "url": "https://aws.amazon.com/",
+  "category": "data-cloud",
+  "thumbnail": "/uses/aws.png"
 }

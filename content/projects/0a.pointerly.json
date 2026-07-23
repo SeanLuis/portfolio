@@ -1,0 +1,20 @@
+{
+  "name": "Pointerly.io",
+  "url": "https://pointerly.io",
+  "description": "Affiliate Operations Platform for creators and brands: smart deep links (Amazon/eBay/Walmart), bio pages, AI content, Creator Connect, automations, and real-time analytics.",
+  "status": "Published",
+  "opensource": false,
+  "thumbnail": "/projects/pointerly.png",
+  "stack": [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Tailwind CSS",
+    "Supabase",
+    "PostgreSQL",
+    "Drizzle",
+    "Stripe",
+    "OpenAI",
+    "Swift"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "Express.js",
-  "description": "Express.js é um framework web para Node.js, desenhado para construir aplicações web e APIs de forma rápida e fácil.",
+  "description": "Web framework for Node.js designed to build web apps and APIs quickly.",
   "url": "https://expressjs.com/",
   "category": "backend",
   "thumbnail": "/uses/express-js.png"

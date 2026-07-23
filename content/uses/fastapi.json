@@ -1,0 +1,6 @@
+{
+  "name": "FastAPI",
+  "description": "Python web framework for typed HTTP APIs.",
+  "url": "https://fastapi.tiangolo.com/",
+  "category": "backend"
+}

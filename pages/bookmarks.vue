@@ -8,8 +8,18 @@
           target="_blank"
           class="flex items-center gap-3 hover:bg-gray-100 dark:hover:bg-white/10 p-2 rounded-lg -m-2 text-sm min-w-0"
         >
-          <UAvatar
+          <img
+            v-if="(faviconStage[getHost(bookmark.url)] ?? 0) < 2"
+            :key="`${getHost(bookmark.url)}-${faviconStage[getHost(bookmark.url)] ?? 0}`"
             :src="getThumbnail(bookmark.url)"
+            :alt="bookmark.label"
+            width="32"
+            height="32"
+            class="size-8 shrink-0 rounded-md bg-gray-100 object-cover dark:bg-gray-800"
+            @error="onFaviconError(bookmark.url)"
+          />
+          <UAvatar
+            v-else
             :alt="bookmark.label"
             :ui="{ rounded: 'rounded-md' }"
           />
@@ -28,11 +38,14 @@
 
 <script setup>
 const description =
-  "Coisas incríveis que encontrei na internet. Esta página ainda é WIP, quero adicionar pesquisa como bmrks.com";
+  "Interesting things I've found on the internet. This page is still WIP — I'd like to add search like bmrks.com.";
 useSeoMeta({
   title: "Bookmarks | Sean Rodriguez",
   description,
 });
+
+/** host → 0 google (default), 1 duckduckgo, 2 exhausted (UAvatar initials) */
+const faviconStage = reactive({});
 
 const bookmarks = [
   {
@@ -263,6 +276,19 @@ function getHost(url) {
 
 function getThumbnail(url) {
   const host = getHost(url);
-  return `https://logo.clearbit.com/${host}`;
+  const stage = faviconStage[host] ?? 0;
+  if (stage >= 1) {
+    return `https://icons.duckduckgo.com/ip3/${host}.ico`;
+  }
+  // Same strategy as ProjectCard — Google favicons (Clearbit logo API is dead)
+  return `https://www.google.com/s2/favicons?domain=${host}&sz=64`;
+}
+
+function onFaviconError(url) {
+  const host = getHost(url);
+  const stage = faviconStage[host] ?? 0;
+  if (stage < 2) {
+    faviconStage[host] = stage + 1;
+  }
 }
 </script>

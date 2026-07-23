@@ -18,7 +18,7 @@
 
 <script setup>
 const target = ref(null);
-const targetIsVisible = useElementVisibility(target);
+const hasStarted = ref(false);
 
 const props = defineProps({
   targetNumber: {
@@ -29,7 +29,10 @@ const props = defineProps({
 });
 
 const startCounter = () => {
-  const counter = document.querySelector(".animate-counter");
+  if (!import.meta.client || hasStarted.value) return;
+  const counter = target.value;
+  if (!counter || typeof counter.animate !== "function") return;
+  hasStarted.value = true;
   counter.animate([{ "--num": 0 }, { "--num": props.targetNumber }], {
     duration: 1000,
     easing: "ease-out",
@@ -37,8 +40,24 @@ const startCounter = () => {
   });
 };
 
-watchOnce(targetIsVisible, () => {
-  startCounter();
+onMounted(() => {
+  if (!target.value || typeof IntersectionObserver === "undefined") {
+    startCounter();
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry?.isIntersecting) {
+        startCounter();
+        observer.disconnect();
+      }
+    },
+    { threshold: 0.2 }
+  );
+
+  observer.observe(target.value);
+  onBeforeUnmount(() => observer.disconnect());
 });
 </script>
 

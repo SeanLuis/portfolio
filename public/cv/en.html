@@ -5,196 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sean Luis Guada Rodriguez - CV</title>
     <style>
+        @page { margin: 0.75in; }
         body {
             font-family: 'Times New Roman', Times, serif;
-            font-size: 12pt;
+            font-size: 11pt;
             color: #000;
-            line-height: 1.3;
-            margin: 1in;
+            line-height: 1.28;
+            margin: 0.75in;
             max-width: 8.5in;
         }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        
+        .header { text-align: center; margin-bottom: 16px; }
         h1 {
-            font-size: 18pt;
+            font-size: 16pt;
             margin: 0;
             font-weight: bold;
             text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
-        
-        .contact-info {
-            margin-top: 5px;
-        }
-        
+        .contact-info { margin-top: 4px; font-size: 10.5pt; }
         h2 {
-            font-size: 14pt;
-            border-bottom: 1px solid #000;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-        
-        h3 {
             font-size: 12pt;
-            margin: 15px 0 5px 0;
+            border-bottom: 1px solid #000;
+            margin-top: 14px;
+            margin-bottom: 8px;
+            padding-bottom: 1px;
             font-weight: bold;
+            text-transform: uppercase;
         }
-        
-        .job-title {
+        .entry { margin-bottom: 8px; }
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            font-size: 11pt;
             font-weight: bold;
+            margin: 0 0 1px 0;
         }
-        
-        .company {
-            font-weight: bold;
-        }
-        
-        .location-date {
-            float: right;
+        .entry-header .date {
             font-style: italic;
+            font-weight: normal;
+            white-space: nowrap;
+            flex-shrink: 0;
         }
-        
-        ul {
-            margin-top: 5px;
-            margin-bottom: 5px;
-            padding-left: 20px;
-        }
-        
-        li {
-            margin-bottom: 5px;
-        }
-        
-        .technologies {
-            font-style: italic;
-        }
-        
-        a {
-            color: #000;
-            text-decoration: none;
-        }
-        
-        .clear {
-            clear: both;
+        .company { font-weight: bold; margin-bottom: 2px; }
+        .degree { margin-bottom: 2px; }
+        ul { margin: 2px 0 0 0; padding-left: 18px; }
+        li { margin-bottom: 2px; }
+        .technologies { font-style: italic; }
+        a { color: #000; text-decoration: none; }
+        p { margin: 0 0 4px 0; }
+        @media print {
+            body { margin: 0; }
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>SEAN LUIS GUADA RODRIGUEZ</h1>
+        <h1>Sean Luis Guada Rodriguez</h1>
         <div class="contact-info">
             Florianópolis, Santa Catarina, Brazil<br>
-            seanluis47@gmail.com | 
-            <a href="https://www.linkedin.com/in/sean-luisguada-rodriguez-4360a5bb">LinkedIn</a> | 
+            seanluis47@gmail.com |
+            <a href="https://www.linkedin.com/in/sean-luis-guada-rodriguez-4360a5bb">LinkedIn</a> |
+            <a href="https://github.com/SeanLuis">GitHub</a> |
             <a href="https://sean-rodriguez.vercel.app/">Portfolio</a>
         </div>
     </div>
 
-    <h2>PROFESSIONAL PROFILE</h2>
+    <h2>Professional Profile</h2>
     <p>
-        Senior Frontend and Blockchain Developer, passionate about technology and focused on building robust web and decentralized solutions. Specialist in Vue.js (Nuxt.js, Pinia, Router, Tailwind CSS) and Node.js (NestJS, Express), with solid experience in developing and optimizing DApps with Solidity, Hardhat, Polygon (including zkEVM), Hedera Hashgraph and Viem. Proficient in AWS infrastructure (EC2, Route 53, Lambda, S3, CloudFront), Docker and MySQL and MongoDB databases.
+        Founder and software engineer working on agentic AI products, verifiable trust systems, and full-stack applications.
+        Founder &amp; CEO of Evercore.sh; founder of Pointerly.io and Berea AI (coming soon).
+        Sr. Frontend Engineer at AgTrace. Author of ERC-7893 (Final Standards Track). Contributor to aspect-evp/evp-js.
+        Main stack: TypeScript (Vue/Nuxt, NestJS, React), Python/FastAPI, Solidity, and cloud/DevOps.
     </p>
 
-    <h2>PROFESSIONAL EXPERIENCE</h2>
+    <h2>Professional Experience</h2>
 
-    <h3>
-        <span class="job-title">FRONTEND ENGINEER</span>
-        <span class="location-date">May 2021 - Present</span>
-    </h3>
-    <div class="company">AgTrace | Florianópolis, SC, Brazil</div>
+    <div class="entry">
+        <div class="entry-header">
+            <span>FOUNDER &amp; CEO</span>
+            <span class="date">Jan 2026 - Present</span>
+        </div>
+        <div class="company">Evercore.sh | Florianópolis, SC, Brazil</div>
+        <ul>
+            <li>Lead product and engineering for a regulated trust layer: encrypted permanent storage, evidence workflows, and agent-assisted compliance.</li>
+            <li>Ship Console, API, SDK, and MCP-compatible tools with business profiles, scopes, approvals, and on-chain proof receipts (Arweave, Hedera HCS, IPFS).</li>
+            <li class="technologies"><strong>Technologies:</strong> TypeScript, Arweave, Hedera HCS, IPFS, AES-256-GCM, agentic AI, REST/MCP</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>FOUNDER</span>
+            <span class="date">2025 - Present</span>
+        </div>
+        <div class="company">Pointerly.io</div>
+        <ul>
+            <li>Build an affiliate operations platform for Amazon Associates, creators, and brands: deep links, bio pages, AI content tools, Creator Connect, and analytics.</li>
+            <li>Ship web app, browser extension, and iOS client around tag preservation, marketplace routing, and revenue automations.</li>
+            <li class="technologies"><strong>Technologies:</strong> TypeScript, deep linking, AI content, analytics, Chrome extension, iOS</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>FOUNDER</span>
+            <span class="date">2025 - Present</span>
+        </div>
+        <div class="company">Berea AI (coming soon)</div>
+        <ul>
+            <li>Building a multi-tenant knowledge agents platform with hybrid RAG, document and page citations, human-approved tool calling, and Arena multi-agent mode.</li>
+            <li>Design retrieval with rewrite, hybrid search, neighbor expand, and rerank, with ACL filters applied at vector search time.</li>
+            <li class="technologies"><strong>Technologies:</strong> Python, FastAPI, Qdrant, PostgreSQL, React, TanStack Start, OpenAI, Composio/MCP</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>SR. FRONTEND ENGINEER</span>
+            <span class="date">May 2021 - Present</span>
+        </div>
+        <div class="company">AgTrace | Florianópolis, SC, Brazil</div>
+        <ul>
+            <li>Build and maintain Vue.js/Nuxt.js interfaces for agricultural traceability, including Pinia state and Tailwind CSS.</li>
+            <li>Lead DApps and Solidity contracts (Hardhat, Polygon, Hedera) with partners such as Abrapa, Reserva, C&amp;A, and Renner.</li>
+            <li class="technologies"><strong>Technologies:</strong> Vue.js, Nuxt.js, Pinia, Tailwind CSS, Solidity, Hardhat, Polygon, Hedera, Viem</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>BACKEND DEVELOPER</span>
+            <span class="date">Feb 2023 - Dec 2023</span>
+        </div>
+        <div class="company">Syntonize | Madrid, Spain (Remote)</div>
+        <ul>
+            <li>Built APIs for shopping-center mobile apps, visitor analytics, and third-party integrations (including Merlin Properties).</li>
+            <li class="technologies"><strong>Technologies:</strong> NestJS, Express, TypeScript, MySQL, MongoDB, Redis, AWS, Docker</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>BACKEND DEVELOPER</span>
+            <span class="date">Sep 2022 - Sep 2023</span>
+        </div>
+        <div class="company">QA-Bit | Remote</div>
+        <ul>
+            <li>Developed NestJS/TypeScript REST APIs with caching, queues, and real-time messaging; contributed to UPTA Spain's digitalization portal.</li>
+            <li class="technologies"><strong>Technologies:</strong> NestJS, Express, TypeScript, MySQL, MongoDB, Redis, AWS (S3, SES)</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>FULLSTACK DEVELOPER</span>
+            <span class="date">Feb 2016 - Jun 2022</span>
+        </div>
+        <div class="company">Freelance / Independent | Remote</div>
+        <ul>
+            <li>Delivered fullstack web apps and DApps for clients including CubaMax, Toma1, and Alacasa.</li>
+            <li class="technologies"><strong>Technologies:</strong> Vue.js, Nuxt.js, Node.js, Express, AWS, Docker, MongoDB</li>
+        </ul>
+    </div>
+
+    <h2>Selected Projects &amp; Standards</h2>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>ERC-7893 - DEFI PROTOCOL SOLVENCY PROOF</span>
+        </div>
+        <ul>
+            <li>Author of a Final Standards Track ERC for on-chain solvency proofs in DeFi protocols.</li>
+            <li>Spec: <a href="https://eips.ethereum.org/EIPS/eip-7893">eips.ethereum.org/EIPS/eip-7893</a> · Ref: <a href="https://github.com/SeanLuis/erc-7893">SeanLuis/erc-7893</a></li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>EVP-JS (EMAIL VERIFICATION PROTOCOL)</span>
+        </div>
+        <ul>
+            <li>TypeScript implementation of EVP (issuer, verifier, core, CLI), tracking WICG/IETF drafts.</li>
+            <li>GitHub: <a href="https://github.com/aspect-evp/evp-js">aspect-evp/evp-js</a></li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>GITHUB OPEN SOURCE EXPLORER</span>
+        </div>
+        <ul>
+            <li>Web app to discover and follow trending open-source projects on GitHub.</li>
+            <li><a href="https://github-explorer.nuxt.dev">github-explorer.nuxt.dev</a> · Nuxt 3, Vue 3, Tailwind CSS</li>
+        </ul>
+    </div>
+
+    <h2>Education and Certifications</h2>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>UNIVERSITY AT BUFFALO / COURSERA</span>
+            <span class="date">2022 - 2023</span>
+        </div>
+        <div class="degree"><strong>Blockchain Specialization</strong></div>
+        <ul>
+            <li>Blockchain Basics, Blockchain Platforms, Smart Contracts, Decentralized Applications (DApps)</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>INSTITUTO POLITÉCNICO DE INFORMÁTICA "PABLO DE LA TORRIENTE BRAU"</span>
+            <span class="date">2009 - 2012</span>
+        </div>
+        <div class="degree"><strong>IT Technician</strong></div>
+    </div>
+
+    <h2>Technical Skills</h2>
     <ul>
-        <li>Develop and optimize complex user interfaces for the agricultural traceability platform using Vue.js/Nuxt.js, Pinia and Tailwind CSS.</li>
-        <li>Lead the development of decentralized applications (DApps) for the agricultural sector using Solidity, Hardhat and Polygon.</li>
-        <li>Implement optimized smart contracts that improve performance and reduce transaction costs.</li>
-        <li>Collaborate on an innovative traceability project with Abrapa, Reserva, C&A and Renner, providing complete visibility of the production chain through QR codes.</li>
-        <li class="technologies"><strong>Technologies</strong>: Vue.js, Nuxt.js, Pinia, Tailwind CSS, Solidity, Hardhat, Polygon, Hedera Hashgraph, Viem</li>
-    </ul>
-
-    <h3>
-        <span class="job-title">BACKEND DEVELOPER</span>
-        <span class="location-date">September 2022 - September 2023</span>
-    </h3>
-    <div class="company">QA-BIT | Barcelona, Spain (Remote)</div>
-    <ul>
-        <li>Optimized processes using advanced caching techniques and database queries.</li>
-        <li>Implemented queue and real-time messaging systems, improving scalability between services.</li>
-        <li>Developed secure and efficient RESTful APIs with NestJS and TypeScript.</li>
-        <li>Participated in the development of the "Impulsando Tu Digitalización" project for UPTA Spain.</li>
-        <li class="technologies"><strong>Technologies</strong>: NestJS, Express, TypeScript, MySQL, MongoDB, Redis, AWS (S3, SES)</li>
-    </ul>
-
-    <h3>
-        <span class="job-title">FULLSTACK DEVELOPER</span>
-        <span class="location-date">February 2020 - June 2022</span>
-    </h3>
-    <div class="company">Freelance | Remote</div>
-    <ul>
-        <li>Created complete web applications using Vue.js for frontend and Node.js (Express/NestJS) for backend.</li>
-        <li>Implemented AWS solutions and Docker deployment for multiple projects.</li>
-        <li>Developed DApps and smart contracts for various clients.</li>
-        <li class="technologies"><strong>Technologies</strong>: Vue.js, Nuxt.js, Node.js, Express, AWS, Docker, MongoDB</li>
-    </ul>
-
-    <div class="clear"></div>
-    <h2>HIGHLIGHTED PROJECTS</h2>
-
-    <h3>GITHUB OPEN SOURCE EXPLORER</h3>
-    <ul>
-        <li>Web application to discover and track open-source projects on GitHub.</li>
-        <li>Website: <a href="https://github-explorer.nuxt.dev">github-explorer.nuxt.dev</a></li>
-        <li class="technologies"><strong>Technologies</strong>: Nuxt 3, Vue 3, Tailwind CSS</li>
-    </ul>
-
-    <h3>GITHUB EXPLORER VS CODE EXTENSION</h3>
-    <ul>
-        <li>Extension to explore GitHub trends directly in VS Code.</li>
-        <li>GitHub: <a href="https://github.com/SeanLuis/github-explorer/tree/master/vscode-extension">SeanLuis/github-explorer</a></li>
-    </ul>
-
-    <h3>DEFI PROTOCOL SOLVENCY PROOF STANDARD</h3>
-    <ul>
-        <li>Standard proposal for solvency verification in DeFi using zk proofs.</li>
-        <li>GitHub: <a href="https://github.com/SeanLuis/eip-draft">SeanLuis/eip-draft</a></li>
-    </ul>
-
-    <h3>ETHEREUM MERKLE PROOF CACHING</h3>
-    <ul>
-        <li>EIP proposal for cache optimization in Merkle proofs on Ethereum.</li>
-        <li>GitHub: <a href="https://seanluis.github.io/eip-merkle-proof-caching/">seanluis.github.io/eip-merkle-proof-caching</a></li>
-    </ul>
-
-    <h2>EDUCATION AND CERTIFICATIONS</h2>
-
-    <h3>
-        <span>UNIVERSITY AT BUFFALO / COURSERA</span>
-        <span class="location-date">January 2022 - February 2023</span>
-    </h3>
-    <div><strong>Blockchain Specialization Program</strong></div>
-    <ul>
-        <li>Blockchain Basics</li>
-        <li>Blockchain Platforms</li>
-        <li>Smart Contracts</li>
-        <li>Decentralized Applications (Dapps)</li>
-    </ul>
-
-    <h3><span>COURSERA</span></h3>
-    <div><strong>Associate of Science - Computer Programming</strong></div>
-
-    <h3>
-        <span>INSTITUTO POLITÉCNICO DE INFORMÁTICA "PABLO DE LA TORRIENTE BRAU"</span>
-        <span class="location-date">2009 - 2012</span>
-    </h3>
-    <div><strong>IT Technician</strong></div>
-
-    <h2>TECHNICAL SKILLS</h2>
-    <ul>
-        <li><strong>Frontend</strong>: Vue.js, Nuxt.js, Pinia, Vue Router, TypeScript, JavaScript (ES6+), Tailwind CSS</li>
-        <li><strong>Backend</strong>: Node.js, NestJS, Express.js, TypeScript</li>
-        <li><strong>Blockchain</strong>: Solidity, Hardhat, Polygon (PoS, zkEVM), Hedera Hashgraph SDK, Viem, Ethers.js</li>
-        <li><strong>Databases</strong>: MySQL, MongoDB</li>
-        <li><strong>Cloud & DevOps</strong>: AWS (EC2, Route 53, Lambda, S3, CloudFront), Docker, Git, GitHub Actions</li>
+        <li><strong>Frontend:</strong> Vue.js, Nuxt.js, React, Pinia, TypeScript, Tailwind CSS</li>
+        <li><strong>Backend:</strong> Node.js, NestJS, Express, Python, FastAPI</li>
+        <li><strong>AI:</strong> RAG, embeddings, tool calling, MCP, agent workflows</li>
+        <li><strong>Blockchain / Trust:</strong> Solidity, Hardhat, Polygon, Hedera, Arweave, IPFS, Viem</li>
+        <li><strong>Data &amp; Cloud:</strong> PostgreSQL, MongoDB, MySQL, Qdrant, Redis, AWS, Docker</li>
     </ul>
 </body>
 </html>

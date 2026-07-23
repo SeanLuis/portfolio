@@ -1,7 +1,7 @@
 {
-    "name": "Apache Kafka",
-    "description": "Plataforma de streaming de eventos distribu\u00edda, utilizada para construir aplica\u00e7\u00f5es de dados em tempo real.",
-    "url": "https://kafka.apache.org/",
-    "category": "others",
-    "thumbnail": "/uses/apache-kafka.png"
+  "name": "Apache Kafka",
+  "description": "Distributed event streaming platform used to build real-time data applications.",
+  "url": "https://kafka.apache.org/",
+  "category": "others",
+  "thumbnail": "/uses/apache-kafka.png"
 }

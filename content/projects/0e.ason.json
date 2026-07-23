@@ -1,0 +1,9 @@
+{
+  "name": "ASON — Aliased Serialization Object Notation",
+  "url": "https://github.com/SeanLuis/ason",
+  "description": "Serialization format designed to reduce token usage in LLM contexts while preserving human readability and full round-trip fidelity.",
+  "status": "WIP",
+  "opensource": true,
+  "thumbnail": "/projects/github.png",
+  "stack": ["TypeScript", "Node.js", "Python", "Go", "Rust"]
+}

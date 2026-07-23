@@ -20,9 +20,9 @@
 </template>
 
 <script setup>
-const description = "Some random experiments with UI I do in my free time.";
+const description = "UI experiments and interactive demos I build in my free time.";
 useSeoMeta({
-  title: "Lab | Fayaz Ahmed",
+  title: "Lab | Sean Rodriguez",
   description,
 });
 </script>

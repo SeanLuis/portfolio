@@ -1,7 +1,9 @@
 {
   "name": "Ethereum Documentation",
   "url": "https://eips-ethereum.netlify.app/",
-  "description": "Contribuição para a documentação oficial do Ethereum, ajudando a manter e melhorar a documentação das EIPs (Ethereum Improvement Proposals)",
+  "description": "Contribution to official Ethereum documentation, helping maintain and improve EIP (Ethereum Improvement Proposal) docs.",
   "status": "Published",
-  "opensource": true
+  "opensource": true,
+  "thumbnail": "/projects/ethereum.png",
+  "stack": ["Markdown", "Ethereum"]
 }

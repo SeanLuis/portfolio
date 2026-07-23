@@ -64,7 +64,7 @@
         <div class="card-glow"></div>
       </div>
       
-      <!-- Card 3 - Estadísticas -->
+      <!-- Card 3 - Statistics -->
       <div
         class="glass-card group w-64 p-5 rounded-xl backdrop-blur-lg bg-white/15 border border-white/20 transition-all duration-300"
       >
@@ -74,7 +74,7 @@
           </div>
         </div>
         
-        <h3 class="text-lg font-medium text-white mb-2">Estadísticas</h3>
+        <h3 class="text-lg font-medium text-white mb-2">Statistics</h3>
         <p class="text-white/70 text-sm leading-relaxed">
           Analiza métricas y datos de rendimiento en tiempo real.
         </p>
@@ -82,7 +82,7 @@
         <div class="mt-5 pt-4 border-t border-white/10 flex justify-between items-center">
           <div class="flex items-center">
             <Icon name="uil:chart-pie" class="w-3.5 h-3.5 text-white/60 mr-1.5" />
-            <span class="text-xs text-white/60">14 gráficos</span>
+            <span class="text-xs text-white/60">14 charts</span>
           </div>
           <button class="flex items-center justify-center w-6 h-6 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
             <Icon name="uil:angle-right" class="w-4 h-4 text-white" />
