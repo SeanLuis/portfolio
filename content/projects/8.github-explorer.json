@@ -1,9 +1,0 @@
-{
-  "name": "GitHub Open Source Explorer",
-  "url": "https://github-explorer.nuxt.dev",
-  "description": "Modern web app to discover, explore, and track trending open-source projects on GitHub. Built with Nuxt 3, Vue 3, and Tailwind CSS — advanced search, trending dashboard, and dark mode.",
-  "status": "Published",
-  "opensource": true,
-  "thumbnail": "/projects/github.png",
-  "stack": ["Nuxt.js", "Vue.js", "Pinia", "Tailwind CSS", "TypeScript"]
-}

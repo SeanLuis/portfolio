@@ -1,11 +1,22 @@
-# Portfolio
+# Portfolio — Sean Luis Guada Rodríguez
 
-Sou Desenvolvedor Fullstack e Blockchain. Apaixonado por aprendizado contínuo e trabalho em equipe, busco sempre superar expectativas, aplicando minha expertise técnica e criatividade
-para desenvolver soluções tecnológicas eficazes e inovadoras. Comprometido com a excelência, almejo contribuir em ambientes que valorizam crescimento,
-colaboração e inovação.
+Senior full-stack developer (Node.js, TypeScript, React) and product founder.
 
-De dia, sou Desenvolvedor Fullstack na e
-à noite (e fins de semana), estou ocupado mexendo em alguma ferramenta ou aplicativo aleatório
-que estou construindo.
+**Site:** [sean-rodriguez.vercel.app](https://sean-rodriguez.vercel.app)  
+**GitHub:** [SeanLuis](https://github.com/SeanLuis)  
+**LinkedIn:** [sean-luis-guada-rodriguez-4360a5bb](https://www.linkedin.com/in/sean-luis-guada-rodriguez-4360a5bb)
 
-![Porfolio home preview](https://sean-rodriguez.vercel.app/preview.png)
+## Stack
+
+Nuxt 3, Vue 3, Tailwind / Nuxt UI, `@nuxt/content` for projects and experience.
+
+## Develop
+
+```bash
+pnpm install
+pnpm dev
+```
+
+Build: `pnpm build` · Generate: `pnpm generate`
+
+![Portfolio home preview](https://sean-rodriguez.vercel.app/preview.png)

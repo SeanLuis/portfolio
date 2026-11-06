@@ -13,9 +13,9 @@
 
 <script setup>
 const description =
-  "I've worked on many small projects over the years, but these are the ones I'm most proud of. Many are open source — if something catches your interest, check out the code and contribute if you have ideas for how it can be improved.";
+  "Founder products first (Evercore, Pointerly, A-REX, Imóveis Bridge), then standards and open-source work (ERC-7893, github-explorer, REST Data Validator, EVP-JS). Role, stack, and links included where available.";
 useSeoMeta({
-  title: "Projects | Sean Rodriguez",
+  title: "Projects | Sean Luis Guada Rodríguez",
   description,
 });
 

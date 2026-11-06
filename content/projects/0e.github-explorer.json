@@ -1,0 +1,10 @@
+{
+  "name": "GitHub Open Source Explorer",
+  "url": "https://github-explorer.nuxt.dev",
+  "description": "Open-source Nuxt 3 app to discover and track trending GitHub repositories — search, sorting by stars, metadata views, and dark mode. ~50 GitHub stars.",
+  "status": "Published",
+  "opensource": true,
+  "role": "Maintainer",
+  "thumbnail": "/projects/github.png",
+  "stack": ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "REST APIs"]
+}

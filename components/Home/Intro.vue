@@ -1,91 +1,93 @@
 <template>
   <div class="space-y-6">
-    <NuxtImg src="/avatar.jpeg" alt="Sean Rodriguez"
+    <NuxtImg src="/avatar.jpeg" alt="Sean Luis Guada Rodríguez"
       class="ring-2 border ring-gray-200 border-gray-300 dark:ring-white/10 dark:border-gray-800 hover:ring-4 transition-all duration-300 bg-gray-200 dark:bg-gray-900 rounded-full h-12 w-12 sm:h-16 sm:w-16"
       sizes="48px sm:64px" placeholder format="webp" />
     <h1 class="text-xl font-bold tracking-tight text-gray-800 dark:text-gray-100">
-      Hello!
+      Sean Luis Guada Rodríguez
     </h1>
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      Senior Full-Stack Developer · Node.js / TypeScript / React · Florianópolis, Brazil · Open to Madrid (hybrid)
+    </p>
     <p class="text-gray-900 dark:text-gray-400">
-      I'm Sean Luis Guada Rodríguez — founder and software engineer based in Florianópolis.
-      I build products at the intersection of
-      <strong>agentic AI</strong>, <strong>verifiable trust</strong>, and
-      <strong>full-stack platforms</strong>.
-      Today I lead
+      I design and ship full-stack products end to end — Node.js and TypeScript services,
+      React and Vue frontends, REST APIs, and practical AI-assisted workflows — with a
+      founder’s bias for clarity, ownership, and outcomes. English at a basic level;
+      Spanish and Portuguese in daily use.
+    </p>
+    <p class="text-gray-900 dark:text-gray-400">
+      As founder I lead
       <strong>
         <a class="underline text-[#0284c7]" href="https://evercore.sh">
-          <UTooltip text="evercore.sh">
-            Evercore.sh
-          </UTooltip>
+          <UTooltip text="evercore.sh">Evercore.sh</UTooltip>
         </a>
       </strong>
-      (a regulated evidence layer with compliance agents on Arweave, Hedera, and IPFS),
+      (agentic compliance and verifiable evidence),
       <strong>
         <a class="underline text-[#0284c7]" href="https://pointerly.io">
-          <UTooltip text="pointerly.io">
-            Pointerly.io
-          </UTooltip>
+          <UTooltip text="pointerly.io">Pointerly.io</UTooltip>
         </a>
       </strong>
-      (Affiliate Operations Platform for creators and brands) and
+      (affiliate operations for creators and brands),
       <strong>
-        <a class="underline text-[#0284c7]" href="https://berea.app">
-          <UTooltip text="Coming Soon · berea.app">
-            Berea AI
-          </UTooltip>
+        <a class="underline text-[#0284c7]" href="https://a-rex.org">
+          <UTooltip text="a-rex.org — launching">A-REX</UTooltip>
         </a>
       </strong>
-      <span class="text-amber-600 dark:text-amber-400 text-sm font-medium">(Coming Soon)</span>
-      — knowledge agents with RAG, citations, and safe tool calling.
+      <span class="text-amber-600 dark:text-amber-400 text-sm font-medium">(launching)</span>
+      for agricultural lot traceability, and
+      <strong>
+        <a class="underline text-[#0284c7]" href="https://imoveisbridge.com.br">
+          <UTooltip text="imoveisbridge.com.br">Imóveis Bridge</UTooltip>
+        </a>
+      </strong>
+      for Brazilian real-estate operations. I also ship
+      <strong>Berea AI</strong>
+      <span class="text-amber-600 dark:text-amber-400 text-sm font-medium">(coming soon)</span>
+      — knowledge agents with RAG, citations, and approved tool calling.
     </p>
     <p class="text-gray-900 dark:text-gray-400">
-      I also work as Sr. Frontend Engineer at
+      In parallel I work as Sr. Frontend Engineer at
       <strong>
         <a class="underline text-[#0284c7]" href="https://agtrace.ag">
-          <UTooltip text="agtrace.ag">
-            AgTrace
-          </UTooltip>
+          <UTooltip text="agtrace.ag">AgTrace</UTooltip>
         </a>
-      </strong>,
-      shipping agricultural traceability DApps (Vue.js/Nuxt, Solidity, Polygon, Hedera).
-      Author of
+      </strong>
+      (Vue/Nuxt traceability UIs and DApps). Earlier backend roles at
+      <strong>
+        <a class="underline text-[#0284c7]" href="https://www.syntonize.com/en/home-en/">Syntonize</a>
+      </strong>
+      (Madrid) and
+      <strong>
+        <a class="underline text-[#0284c7]" href="https://qa-bit.com/en/">Qa-Bit</a>
+      </strong>
+      (Barcelona) focused on NestJS/TypeScript REST services. Author of
       <strong>
         <a class="underline text-[#0284c7]" href="https://eips.ethereum.org/EIPS/eip-7893">
-          <UTooltip text="eips.ethereum.org/EIPS/eip-7893">
-            ERC-7893
-          </UTooltip>
+          <UTooltip text="eips.ethereum.org/EIPS/eip-7893">ERC-7893</UTooltip>
         </a>
       </strong>
-      (DeFi Protocol Solvency Proof) and contributor to
+      (Final Standards Track) and contributor to open-source work including
       <strong>
-        <a class="underline text-[#0284c7]" href="https://github.com/aspect-evp/evp-js">
-          <UTooltip text="github.com/aspect-evp/evp-js">
-            aspect-evp/evp-js
-          </UTooltip>
-        </a>
+        <a class="underline text-[#0284c7]" href="https://github.com/aspect-evp/evp-js">aspect-evp/evp-js</a>
       </strong>
-      (Email Verification Protocol).
-      Earlier experience at
+      and
       <strong>
-        <a class="underline text-[#0284c7]" href="https://qa-bit.com/en/">Qa-Bit</a>,
-        <a class="underline text-[#0284c7]" href="https://www.syntonize.com/en/home-en/">Syntonize</a>,
-        <a class="underline text-[#0284c7]" href="https://www.abrapa.com.br/">Abrapa</a>,
-        <a class="underline text-[#0284c7]" href="https://www.3tentos.com.br/">3Tentos</a>
-      </strong>
-      and freelance projects (CubaMax, Toma1, Alacasa).
+        <a class="underline text-[#0284c7]" href="https://github.com/SeanLuis/github-explorer">github-explorer</a>
+      </strong>.
     </p>
     <p class="text-gray-900 dark:text-gray-400">
-      Core stack: TypeScript, Vue/Nuxt, React, Node/NestJS, Python/FastAPI,
-      Solidity/Hardhat, Arweave, Hedera, IPFS, AWS, and Docker. Clean code,
-      auditable evidence, and products regulated teams can actually ship.
+      Core stack: TypeScript, Node.js, NestJS/Express, React, Vue/Nuxt, PostgreSQL/MongoDB,
+      REST and web services, AWS, Docker, plus AI tooling (RAG, MCP, agent workflows) when it
+      earns its place in the product.
     </p>
   </div>
 </template>
 
 <script setup>
 useSeoMeta({
-  title: "Sean Rodriguez",
+  title: "Sean Luis Guada Rodríguez — Senior Full-Stack Developer",
   description:
-    "Founder at Evercore.sh, Pointerly.io and Berea AI (Coming Soon). Sr. Frontend Engineer at AgTrace. Author of ERC-7893. Full-stack, blockchain and agentic AI engineer based in Florianópolis.",
+    "Senior full-stack developer (Node.js, TypeScript, React). Founder of Evercore.sh, Pointerly.io, A-REX, and Imóveis Bridge. Sr. Frontend Engineer at AgTrace. Author of ERC-7893. Based in Florianópolis; open to Madrid hybrid roles.",
 });
 </script>

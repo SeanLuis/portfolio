@@ -49,12 +49,11 @@ const items = [
     path: "/projects",
     icon: "solar:folder-with-files-outline",
   },
- {
-   name: "Articles",
-   path: "/articles",
-   icon: "solar:document-add-outline",
- },
- { name: "Lab", path: "/lab", icon: "heroicons:beaker" },
+  {
+    name: "Articles",
+    path: "/articles",
+    icon: "solar:document-add-outline",
+  },
   {
     name: "Experience",
     path: "/work-experience",
@@ -76,32 +75,38 @@ defineShortcuts({
   meta_1: {
     usingInput: true,
     handler: () => {
-      navigateTo('/')
-    }
+      navigateTo("/");
+    },
   },
   meta_2: {
     usingInput: true,
     handler: () => {
-      navigateTo('/projects')
-    }
+      navigateTo("/projects");
+    },
   },
   meta_3: {
     usingInput: true,
     handler: () => {
-      navigateTo('/work-experience')
-    }
+      navigateTo("/articles");
+    },
   },
   meta_4: {
     usingInput: true,
     handler: () => {
-      navigateTo('/technologies-i-use')
-    }
+      navigateTo("/work-experience");
+    },
   },
   meta_5: {
     usingInput: true,
     handler: () => {
-      navigateTo('/bookmarks')
-    }
-  }
-})
+      navigateTo("/technologies-i-use");
+    },
+  },
+  meta_6: {
+    usingInput: true,
+    handler: () => {
+      navigateTo("/bookmarks");
+    },
+  },
+});
 </script>

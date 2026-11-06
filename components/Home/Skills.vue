@@ -19,35 +19,16 @@
 <script setup>
 const groups = [
   {
-    label: "Frontend",
-    items: [
-      "Vue.js",
-      "Nuxt.js",
-      "React",
-      "Pinia",
-      "TypeScript",
-      "Tailwind CSS",
-    ],
+    label: "Languages",
+    items: ["TypeScript", "JavaScript (ES6+)", "Python", "Solidity", "SQL"],
   },
   {
     label: "Backend",
-    items: ["Node.js", "NestJS", "Express", "Python", "FastAPI"],
+    items: ["Node.js", "NestJS", "Express", "REST APIs", "FastAPI"],
   },
   {
-    label: "AI",
-    items: ["RAG", "embeddings", "tool calling", "MCP", "agent workflows"],
-  },
-  {
-    label: "Blockchain / Trust",
-    items: [
-      "Solidity",
-      "Hardhat",
-      "Polygon",
-      "Hedera",
-      "Arweave",
-      "IPFS",
-      "Viem",
-    ],
+    label: "Frontend",
+    items: ["React", "Next.js", "Vue.js", "Nuxt.js", "Pinia", "Tailwind CSS"],
   },
   {
     label: "Data & Cloud",
@@ -55,11 +36,23 @@ const groups = [
       "PostgreSQL",
       "MongoDB",
       "MySQL",
-      "Qdrant",
       "Redis",
       "AWS",
       "Docker",
+      "GitHub Actions",
     ],
+  },
+  {
+    label: "AI tooling",
+    items: ["RAG", "embeddings", "tool calling", "MCP", "agent workflows"],
+  },
+  {
+    label: "Trust / Web3",
+    items: ["Hardhat", "Polygon", "Hedera", "Arweave", "IPFS", "Viem"],
+  },
+  {
+    label: "Spoken languages",
+    items: ["English (basic)", "Spanish", "Portuguese"],
   },
 ];
 </script>

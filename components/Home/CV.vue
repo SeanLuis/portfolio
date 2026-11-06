@@ -153,7 +153,7 @@
           <UFormGroup label="Role you are applying for">
             <UInput
               v-model="coverLetterData.jobPosition"
-              placeholder="e.g. Senior Frontend Engineer"
+              placeholder="e.g. Senior Full-Stack Developer"
             />
           </UFormGroup>
         </div>
@@ -223,7 +223,7 @@ const coverLetterData = ref<CoverLetterData>({
   companyName: '',
   address: '',
   cityStateZip: '',
-  jobPosition: 'Senior Frontend Engineer'
+  jobPosition: 'Senior Full-Stack Developer'
 });
 
 const coverLetterTemplates = {
@@ -244,13 +244,13 @@ seanluis47@gmail.com
 
 Dear [Recipient Name],
 
-I am writing to apply for the [Position] role. I am a founder and software engineer with hands-on experience in TypeScript (Vue/Nuxt, NestJS, React), Python/FastAPI, and blockchain (Solidity, Hedera, Arweave).
+I am writing to apply for the [Position] role. I am a senior full-stack engineer and product founder with day-to-day delivery in Node.js, TypeScript, and React, NestJS/Express REST services, and AI-assisted product workflows.
 
-As Founder & CEO of Evercore.sh, I lead a regulated trust layer for encrypted permanent evidence, governed workflows, and agent-assisted compliance on Arweave, Hedera HCS, and IPFS. I also founded Pointerly.io (affiliate operations for creators and brands) and Berea AI (coming soon: multi-tenant knowledge agents with citations and approved tool calling). In parallel, as Sr. Frontend Engineer at AgTrace, I ship agricultural traceability DApps with Vue.js and Solidity alongside partners such as Abrapa, Reserva, C&A, and Renner.
+As founder of Evercore.sh I lead a regulated trust layer for encrypted permanent evidence, governed workflows, and agent-assisted compliance. I also founded Pointerly.io (affiliate operations), A-REX (agricultural lot traceability, launching), and Imóveis Bridge (Brazilian real-estate operations), and I am building Berea AI (knowledge agents with citations and approved tool calling). In parallel, as Sr. Frontend Engineer at AgTrace, I ship agricultural traceability interfaces and DApps with Vue/Nuxt and TypeScript.
 
-I am the author of ERC-7893 (DeFi Protocol Solvency Proof, Final Standards Track) and contribute to aspect-evp/evp-js. Earlier roles include backend work at Syntonize and QA-Bit, plus years of freelance fullstack delivery.
+I am the author of ERC-7893 (Final Standards Track) and contribute to open-source work including aspect-evp/evp-js and github-explorer. Earlier backend roles at Syntonize (Madrid) and QA-Bit (Barcelona) focused on NestJS/TypeScript APIs.
 
-I would welcome a conversation about how this mix of product leadership, standards work, and day-to-day engineering can help [Company]. More at sean-rodriguez.vercel.app.
+I would welcome a conversation about how this mix of product ownership and full-stack engineering can help [Company]. More at sean-rodriguez.vercel.app.
 
 Sincerely,
 
@@ -273,13 +273,13 @@ seanluis47@gmail.com
 
 Estimado/a [Nombre del Destinatario]:
 
-Me postulo al puesto de [Puesto]. Soy fundador e ingeniero de software con experiencia práctica en TypeScript (Vue/Nuxt, NestJS, React), Python/FastAPI y blockchain (Solidity, Hedera, Arweave).
+Me postulo al puesto de [Puesto]. Soy ingeniero full-stack senior y fundador de producto, con entrega diaria en Node.js, TypeScript y React, servicios REST NestJS/Express y flujos de producto asistidos por IA.
 
-Como Founder & CEO de Evercore.sh lidero una capa de confianza regulada para evidencia permanente cifrada, flujos gobernados y compliance asistido por agentes sobre Arweave, Hedera HCS e IPFS. También fundé Pointerly.io (operaciones de afiliados) y Berea AI (próximamente: agentes de conocimiento con citas y tool calling aprobado). En paralelo, como Sr. Frontend Engineer en AgTrace, construyo DApps de trazabilidad agrícola con Vue.js y Solidity junto a partners como Abrapa, Reserva, C&A y Renner.
+Como fundador de Evercore.sh lidero una capa de confianza regulada para evidencia permanente cifrada, flujos gobernados y compliance asistido por agentes. También fundé Pointerly.io (operaciones de afiliados), A-REX (trazabilidad de lotes agrícolas, en lanzamiento) e Imóveis Bridge (operaciones inmobiliarias en Brasil), y construyo Berea AI (agentes de conocimiento con citas y tool calling aprobado). En paralelo, como Sr. Frontend Engineer en AgTrace, entrego interfaces y DApps de trazabilidad con Vue/Nuxt y TypeScript.
 
-Soy autor de ERC-7893 (DeFi Protocol Solvency Proof, Final Standards Track) y contribuyo a aspect-evp/evp-js. Antes trabajé en backend en Syntonize y QA-Bit, además de varios años como freelance fullstack.
+Soy autor de ERC-7893 (Final Standards Track) y contribuyo a open source (aspect-evp/evp-js, github-explorer). Antes trabajé en backend en Syntonize (Madrid) y QA-Bit (Barcelona) con APIs NestJS/TypeScript.
 
-Me gustaría conversar sobre cómo esta mezcla de liderazgo de producto, estándares e ingeniería puede aportar a [Empresa]. Más en sean-rodriguez.vercel.app.
+Me gustaría conversar sobre cómo esta mezcla de ownership de producto e ingeniería full-stack puede aportar a [Empresa]. Más en sean-rodriguez.vercel.app.
 
 Atentamente,
 
@@ -302,13 +302,13 @@ seanluis47@gmail.com
 
 Prezado(a) [Nome do Destinatário],
 
-Candidatei-me à vaga de [Puesto]. Sou fundador e engenheiro de software com experiência prática em TypeScript (Vue/Nuxt, NestJS, React), Python/FastAPI e blockchain (Solidity, Hedera, Arweave).
+Candidatei-me à vaga de [Puesto]. Sou engenheiro full-stack sênior e fundador de produto, com entrega diária em Node.js, TypeScript e React, serviços REST NestJS/Express e fluxos de produto assistidos por IA.
 
-Como Founder & CEO da Evercore.sh lidero uma camada de confiança regulada para evidência permanente criptografada, fluxos governados e compliance assistido por agentes sobre Arweave, Hedera HCS e IPFS. Também fundei a Pointerly.io (operações de afiliados) e a Berea AI (em breve: agentes de conhecimento com citações e tool calling aprovado). Em paralelo, como Sr. Frontend Engineer na AgTrace, construo DApps de rastreabilidade agrícola com Vue.js e Solidity junto a parceiros como Abrapa, Reserva, C&A e Renner.
+Como fundador da Evercore.sh lidero uma camada de confiança regulada para evidência permanente criptografada, fluxos governados e compliance assistido por agentes. Também fundei a Pointerly.io (operações de afiliados), a A-REX (rastreabilidade de lotes agrícolas, em lançamento) e a Imóveis Bridge (operações imobiliárias no Brasil), e construo a Berea AI (agentes de conhecimento com citações e tool calling aprovado). Em paralelo, como Sr. Frontend Engineer na AgTrace, entrego interfaces e DApps de rastreabilidade com Vue/Nuxt e TypeScript.
 
-Sou autor do ERC-7893 (DeFi Protocol Solvency Proof, Final Standards Track) e contribuo para aspect-evp/evp-js. Antes atuei em backend na Syntonize e na QA-Bit, além de anos como freelance fullstack.
+Sou autor do ERC-7893 (Final Standards Track) e contribuo para open source (aspect-evp/evp-js, github-explorer). Antes atuei em backend na Syntonize (Madrid) e na QA-Bit (Barcelona) com APIs NestJS/TypeScript.
 
-Gostaria de conversar sobre como essa combinação de liderança de produto, padrões e engenharia pode apoiar a [Nome da Empresa]. Mais em sean-rodriguez.vercel.app.
+Gostaria de conversar sobre como essa combinação de ownership de produto e engenharia full-stack pode apoiar a [Nome da Empresa]. Mais em sean-rodriguez.vercel.app.
 
 Atenciosamente,
 
@@ -345,41 +345,38 @@ const cvOptions: CVOption[] = [
 // Define job positions for each language
 const jobPositionsMap = {
   en: [
+    { label: "Senior Full-Stack Developer", value: "Senior Full-Stack Developer" },
     { label: "Senior Frontend Developer", value: "Senior Frontend Developer" },
-    { label: "Senior Blockchain Developer", value: "Senior Blockchain Developer" },
-    { label: "Fullstack Developer", value: "Fullstack Developer" },
-    { label: "Smart Contract Engineer", value: "Smart Contract Engineer" },
-    { label: "DApp Developer", value: "DApp Developer" },
-    { label: "Web3 Developer", value: "Web3 Developer" },
+    { label: "Full-Stack Developer", value: "Full-Stack Developer" },
+    { label: "Senior Software Engineer", value: "Senior Software Engineer" },
+    { label: "Backend Developer (Node.js)", value: "Backend Developer (Node.js)" },
     { label: "Frontend Engineer", value: "Frontend Engineer" },
-    { label: "Blockchain Engineer", value: "Blockchain Engineer" }
+    { label: "Senior Blockchain Developer", value: "Senior Blockchain Developer" }
   ],
   es: [
+    { label: "Desarrollador Full-Stack Senior", value: "Desarrollador Full-Stack Senior" },
     { label: "Desarrollador Frontend Senior", value: "Desarrollador Frontend Senior" },
-    { label: "Desarrollador Blockchain Senior", value: "Desarrollador Blockchain Senior" },
-    { label: "Desarrollador Fullstack", value: "Desarrollador Fullstack" },
-    { label: "Ingeniero de Contratos Inteligentes", value: "Ingeniero de Contratos Inteligentes" },
-    { label: "Desarrollador de DApps", value: "Desarrollador de DApps" },
-    { label: "Desarrollador Web3", value: "Desarrollador Web3" },
+    { label: "Desarrollador Full-Stack", value: "Desarrollador Full-Stack" },
+    { label: "Ingeniero de Software Senior", value: "Ingeniero de Software Senior" },
+    { label: "Desarrollador Backend (Node.js)", value: "Desarrollador Backend (Node.js)" },
     { label: "Ingeniero Frontend", value: "Ingeniero Frontend" },
-    { label: "Ingeniero Blockchain", value: "Ingeniero Blockchain" }
+    { label: "Desarrollador Blockchain Senior", value: "Desarrollador Blockchain Senior" }
   ],
   pt: [
+    { label: "Desenvolvedor Full-Stack Sênior", value: "Desenvolvedor Full-Stack Sênior" },
     { label: "Desenvolvedor Frontend Sênior", value: "Desenvolvedor Frontend Sênior" },
-    { label: "Desenvolvedor Blockchain Sênior", value: "Desenvolvedor Blockchain Sênior" },
-    { label: "Desenvolvedor Fullstack", value: "Desenvolvedor Fullstack" },
-    { label: "Engenheiro de Contratos Inteligentes", value: "Engenheiro de Contratos Inteligentes" },
-    { label: "Desenvolvedor de DApps", value: "Desenvolvedor de DApps" },
-    { label: "Desenvolvedor Web3", value: "Desenvolvedor Web3" },
+    { label: "Desenvolvedor Full-Stack", value: "Desenvolvedor Full-Stack" },
+    { label: "Engenheiro de Software Sênior", value: "Engenheiro de Software Sênior" },
+    { label: "Desenvolvedor Backend (Node.js)", value: "Desenvolvedor Backend (Node.js)" },
     { label: "Engenheiro Frontend", value: "Engenheiro Frontend" },
-    { label: "Engenheiro Blockchain", value: "Engenheiro Blockchain" }
+    { label: "Desenvolvedor Blockchain Sênior", value: "Desenvolvedor Blockchain Sênior" }
   ]
 };
 
 const jobPositionByLanguage = {
-  en: "Senior Frontend Developer",
-  es: "Desarrollador Frontend Senior",
-  pt: "Desenvolvedor Frontend Sênior"
+  en: "Senior Full-Stack Developer",
+  es: "Desarrollador Full-Stack Senior",
+  pt: "Desenvolvedor Full-Stack Sênior"
 };
 
 // Add language-specific text
@@ -435,8 +432,8 @@ function openCoverLetterForm(cv: CVOption): void {
   const languageCode = cv.languageCode as keyof typeof jobPositionsMap;
   jobPositions.value = jobPositionsMap[languageCode] || jobPositionsMap.en;
   
-  const defaultJobPosition = jobPositionByLanguage[languageCode] || 
-                           "Senior Frontend Developer";
+  const defaultJobPosition = jobPositionByLanguage[languageCode] ||
+                           "Senior Full-Stack Developer";
   
   coverLetterData.value = {
     date: new Date().toLocaleDateString(),

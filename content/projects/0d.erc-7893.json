@@ -1,0 +1,10 @@
+{
+  "name": "ERC-7893 — DeFi Protocol Solvency Proof",
+  "url": "https://eips.ethereum.org/EIPS/eip-7893",
+  "description": "Author — Final Standards Track ERC for on-chain solvency proofs in DeFi: assets/liabilities, health metrics, history, and risk alerts. Spec + TypeScript/Solidity reference work.",
+  "status": "Final",
+  "opensource": true,
+  "role": "Author",
+  "thumbnail": "/projects/ethereum.png",
+  "stack": ["Solidity", "TypeScript", "Ethereum"]
+}

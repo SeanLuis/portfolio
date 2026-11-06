@@ -1,0 +1,15 @@
+{
+  "name": "Imóveis Bridge",
+  "url": "https://imoveisbridge.com.br",
+  "description": "Founder product for Brazilian real-estate operations: branded site, operations desk (sale, annual rental, seasonal), and finance in one system — with catalog integrity, integrations, and AI assist for listings and lead response.",
+  "status": "Published",
+  "opensource": false,
+  "role": "Founder",
+  "stack": [
+    "TypeScript",
+    "Node.js",
+    "React",
+    "REST APIs",
+    "AI tooling"
+  ]
+}

@@ -30,9 +30,14 @@ const links = [
     icon: "mdi:github",
   },
   {
-    name: "Linkedin",
+    name: "LinkedIn",
     url: "https://www.linkedin.com/in/sean-luis-guada-rodriguez-4360a5bb/",
     icon: "mdi:linkedin",
-  }
+  },
+  {
+    name: "Email",
+    url: "mailto:seanluis47@gmail.com",
+    icon: "mdi:email-outline",
+  },
 ];
 </script>

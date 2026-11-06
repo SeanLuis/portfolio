@@ -4,6 +4,7 @@
       <HomeIntro />
       <HomeSocialLinks />
       <HomeSkills />
+      <HomeEducation />
       <HomeCV />
       <HomeFeaturedProjects />
       <HomeFeaturedArticles />

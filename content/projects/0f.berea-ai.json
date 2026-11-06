@@ -1,6 +1,6 @@
 {
   "name": "Berea AI",
-  "url": "https://berea.app",
+  "url": "",
   "description": "Coming soon: multi-tenant knowledge agents with RAG, document and page citations, human-approved tool calling, Arena mode, and an embeddable widget.",
   "status": "Coming Soon",
   "opensource": false,

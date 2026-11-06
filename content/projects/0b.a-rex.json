@@ -1,0 +1,15 @@
+{
+  "name": "A-REX",
+  "url": "https://a-rex.org",
+  "description": "Verifiable traceability for agricultural supply chains: an open standard for recording and verifying lots, plus a platform for compliance evidence and supply-chain automation. Founder product — recently launching.",
+  "status": "Launching",
+  "opensource": false,
+  "role": "Founder",
+  "stack": [
+    "TypeScript",
+    "Node.js",
+    "React",
+    "Traceability",
+    "Compliance"
+  ]
+}

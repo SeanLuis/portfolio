@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,7 @@
             text-transform: uppercase;
             letter-spacing: 0.02em;
         }
+        .headline { margin-top: 4px; font-size: 11pt; }
         .contact-info { margin-top: 4px; font-size: 10.5pt; }
         h2 {
             font-size: 12pt;
@@ -63,8 +64,9 @@
 <body>
     <div class="header">
         <h1>Sean Luis Guada Rodriguez</h1>
+        <div class="headline">Desenvolvedor Full-Stack Sênior · Node.js / TypeScript / React</div>
         <div class="contact-info">
-            Florianópolis, Santa Catarina, Brasil<br>
+            Florianópolis, Santa Catarina, Brasil · Aberto a Madrid (híbrido)<br>
             seanluis47@gmail.com |
             <a href="https://www.linkedin.com/in/sean-luis-guada-rodriguez-4360a5bb">LinkedIn</a> |
             <a href="https://github.com/SeanLuis">GitHub</a> |
@@ -74,37 +76,64 @@
 
     <h2>Perfil Profissional</h2>
     <p>
-        Fundador e engenheiro de software em produtos de IA agêntica, sistemas de confiança verificável e aplicações full-stack.
-        Founder &amp; CEO da Evercore.sh; fundador da Pointerly.io e da Berea AI (em breve).
-        Sr. Frontend Engineer na AgTrace. Autor do ERC-7893 (Final Standards Track). Contribuidor do aspect-evp/evp-js.
-        Stack principal: TypeScript (Vue/Nuxt, NestJS, React), Python/FastAPI, Solidity e cloud/DevOps.
+        Engenheiro full-stack sênior e fundador de produto, com entrega prática em Node.js, TypeScript e React,
+        além de serviços REST com NestJS/Express, interfaces Vue/Nuxt e fluxos de produto assistidos por IA.
+        Constrói e opera produtos próprios (Evercore, Pointerly, A-REX, Imóveis Bridge) enquanto entrega sistemas
+        em produção na AgTrace e, antes, papéis de backend em Madrid e Barcelona.
+        Inglês (básico), espanhol e português.
     </p>
 
     <h2>Experiência Profissional</h2>
 
     <div class="entry">
         <div class="entry-header">
-            <span>FOUNDER &amp; CEO</span>
+            <span>FOUNDER</span>
             <span class="date">Jan 2026 - Presente</span>
         </div>
         <div class="company">Evercore.sh | Florianópolis, SC, Brasil</div>
         <ul>
             <li>Lidero produto e engenharia de uma camada de confiança regulada: armazenamento permanente criptografado, fluxos de evidência e compliance assistido por agentes.</li>
-            <li>Entrego Console, API, SDK e ferramentas compatíveis com MCP, com business profiles, scopes, aprovações e recibos de prova on-chain (Arweave, Hedera HCS, IPFS).</li>
-            <li class="technologies"><strong>Tecnologias:</strong> TypeScript, Arweave, Hedera HCS, IPFS, AES-256-GCM, IA agêntica, REST/MCP</li>
+            <li>Entrego Console, API REST, SDK e ferramentas compatíveis com MCP, com business profiles, scopes, aprovações e recibos de prova on-chain (Arweave, Hedera HCS, IPFS).</li>
+            <li class="technologies"><strong>Tecnologias:</strong> TypeScript, Node.js, React, REST/MCP, Arweave, Hedera HCS, IPFS, AWS, Docker</li>
         </ul>
     </div>
 
     <div class="entry">
         <div class="entry-header">
             <span>FOUNDER</span>
-            <span class="date">2025 - Presente</span>
+            <span class="date">Jan 2026 - Presente</span>
         </div>
         <div class="company">Pointerly.io</div>
         <ul>
-            <li>Construo uma plataforma de operações de afiliados para Amazon Associates, creators e marcas: deep links, bio pages, ferramentas de conteúdo com IA, Creator Connect e analytics.</li>
+            <li>Construo uma plataforma de operações de afiliados para creators e marcas: deep links, bio pages, ferramentas de conteúdo com IA, Creator Connect e analytics.</li>
             <li>Publico app web, extensão de navegador e cliente iOS focados em preservar tags, rotear marketplaces e automatizar receita.</li>
-            <li class="technologies"><strong>Tecnologias:</strong> TypeScript, deep linking, conteúdo com IA, analytics, extensão Chrome, iOS</li>
+            <li class="technologies"><strong>Tecnologias:</strong> Next.js, React, TypeScript, PostgreSQL/Supabase, Stripe, OpenAI</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>FOUNDER</span>
+            <span class="date">2026 - Presente</span>
+        </div>
+        <div class="company">A-REX | <a href="https://a-rex.org">a-rex.org</a> (lançamento)</div>
+        <ul>
+            <li>Fundando um padrão aberto e uma plataforma para rastreabilidade verificável de lotes agrícolas, evidência de compliance e automação de cadeia de suprimentos.</li>
+            <li>Conecto experiência em rastreabilidade agri-food a fluxos de verificação productizados para produtores, processadores e traders.</li>
+            <li class="technologies"><strong>Tecnologias:</strong> TypeScript, Node.js, React, APIs REST, rastreabilidade / compliance</li>
+        </ul>
+    </div>
+
+    <div class="entry">
+        <div class="entry-header">
+            <span>FOUNDER</span>
+            <span class="date">Presente</span>
+        </div>
+        <div class="company">Imóveis Bridge | <a href="https://imoveisbridge.com.br">imoveisbridge.com.br</a></div>
+        <ul>
+            <li>Produto de operações imobiliárias no Brasil: site de marca, desk (venda, locação anual, temporada) e financeiro em um só catálogo.</li>
+            <li>Integro pagamentos/canais e assistência de IA limitada para fichas, conteúdo multilíngue e resposta a leads.</li>
+            <li class="technologies"><strong>Tecnologias:</strong> TypeScript, Node.js, React, APIs REST, tooling de IA</li>
         </ul>
     </div>
 
@@ -115,9 +144,8 @@
         </div>
         <div class="company">Berea AI (em breve)</div>
         <ul>
-            <li>Desenvolvo uma plataforma multi-tenant de agentes de conhecimento com RAG híbrido, citações por documento e página, tool calling com aprovação humana e modo Arena multiagente.</li>
-            <li>Desenho o retrieval com rewrite, busca híbrida, expansão de vizinhos e rerank, com filtros ACL na busca vetorial.</li>
-            <li class="technologies"><strong>Tecnologias:</strong> Python, FastAPI, Qdrant, PostgreSQL, React, TanStack Start, OpenAI, Composio/MCP</li>
+            <li>Desenvolvo uma plataforma multi-tenant de agentes de conhecimento com RAG híbrido, citações por documento/página e tool calling com aprovação humana.</li>
+            <li class="technologies"><strong>Tecnologias:</strong> Python, FastAPI, Qdrant, PostgreSQL, React, OpenAI, MCP</li>
         </ul>
     </div>
 
@@ -130,7 +158,7 @@
         <ul>
             <li>Construo e mantenho interfaces Vue.js/Nuxt.js para rastreabilidade agrícola, com Pinia e Tailwind CSS.</li>
             <li>Lidero DApps e contratos Solidity (Hardhat, Polygon, Hedera) com parceiros como Abrapa, Reserva, C&amp;A e Renner.</li>
-            <li class="technologies"><strong>Tecnologias:</strong> Vue.js, Nuxt.js, Pinia, Tailwind CSS, Solidity, Hardhat, Polygon, Hedera, Viem</li>
+            <li class="technologies"><strong>Tecnologias:</strong> Vue.js, Nuxt.js, TypeScript, Pinia, Tailwind CSS, Solidity, Hardhat, Polygon, Hedera, Viem</li>
         </ul>
     </div>
 
@@ -141,7 +169,7 @@
         </div>
         <div class="company">Syntonize | Madrid, Espanha (Remoto)</div>
         <ul>
-            <li>Desenvolvi APIs para apps de shopping centers, analytics de visitantes e integrações com terceiros (incluindo Merlin Properties).</li>
+            <li>Desenvolvi APIs REST NestJS/TypeScript para apps de shopping centers, analytics de visitantes e integrações (incluindo Merlin Properties).</li>
             <li class="technologies"><strong>Tecnologias:</strong> NestJS, Express, TypeScript, MySQL, MongoDB, Redis, AWS, Docker</li>
         </ul>
     </div>
@@ -151,26 +179,26 @@
             <span>DESENVOLVEDOR BACKEND</span>
             <span class="date">Set 2022 - Set 2023</span>
         </div>
-        <div class="company">QA-Bit | Remoto</div>
+        <div class="company">QA-Bit | Barcelona, Espanha (Remoto)</div>
         <ul>
-            <li>Desenvolvi APIs REST com NestJS/TypeScript, cache, filas e mensageria em tempo real; contribui para o portal de digitalização da UPTA Espanha.</li>
+            <li>Desenvolvi APIs REST com NestJS/TypeScript, cache, filas e mensageria; contribui para o portal de digitalização da UPTA Espanha.</li>
             <li class="technologies"><strong>Tecnologias:</strong> NestJS, Express, TypeScript, MySQL, MongoDB, Redis, AWS (S3, SES)</li>
         </ul>
     </div>
 
     <div class="entry">
         <div class="entry-header">
-            <span>DESENVOLVEDOR FULLSTACK</span>
-            <span class="date">Fev 2016 - Jun 2022</span>
+            <span>DESENVOLVEDOR FULL-STACK</span>
+            <span class="date">Fev 2016 - Mai 2021</span>
         </div>
         <div class="company">Freelance / Independente | Remoto</div>
         <ul>
-            <li>Entreguei aplicações web fullstack e DApps para clientes como CubaMax, Toma1 e Alacasa.</li>
-            <li class="technologies"><strong>Tecnologias:</strong> Vue.js, Nuxt.js, Node.js, Express, AWS, Docker, MongoDB</li>
+            <li>Entreguei aplicações web full-stack e APIs para clientes como CubaMax, Toma1 e Alacasa (Vue/Nuxt, Node/Express, MongoDB, AWS, Docker).</li>
+            <li class="technologies"><strong>Tecnologias:</strong> Vue.js, Nuxt.js, Node.js, Express, MongoDB, AWS, Docker</li>
         </ul>
     </div>
 
-    <h2>Projetos e Padrões em Destaque</h2>
+    <h2>Projetos e Open Source em Destaque</h2>
 
     <div class="entry">
         <div class="entry-header">
@@ -187,7 +215,7 @@
             <span>EVP-JS (EMAIL VERIFICATION PROTOCOL)</span>
         </div>
         <ul>
-            <li>Implementação TypeScript do EVP (issuer, verifier, core, CLI), alinhada a rascunhos WICG/IETF.</li>
+            <li>Contribuidor da implementação TypeScript do EVP (issuer, verifier, core, CLI).</li>
             <li>GitHub: <a href="https://github.com/aspect-evp/evp-js">aspect-evp/evp-js</a></li>
         </ul>
     </div>
@@ -197,12 +225,22 @@
             <span>GITHUB OPEN SOURCE EXPLORER</span>
         </div>
         <ul>
-            <li>Aplicação web para descobrir e acompanhar projetos open source em tendência no GitHub.</li>
-            <li><a href="https://github-explorer.nuxt.dev">github-explorer.nuxt.dev</a> · Nuxt 3, Vue 3, Tailwind CSS</li>
+            <li>App Nuxt 3 / TypeScript para descobrir e acompanhar projetos open source em tendência no GitHub.</li>
+            <li><a href="https://github-explorer.nuxt.dev">github-explorer.nuxt.dev</a> · <a href="https://github.com/SeanLuis/github-explorer">SeanLuis/github-explorer</a></li>
         </ul>
     </div>
 
-    <h2>Educação e Certificações</h2>
+    <div class="entry">
+        <div class="entry-header">
+            <span>REST DATA VALIDATOR</span>
+        </div>
+        <ul>
+            <li>Biblioteca TypeScript para validação extensível de payloads REST.</li>
+            <li><a href="https://github.com/SeanLuis/rest-data-validator">SeanLuis/rest-data-validator</a></li>
+        </ul>
+    </div>
+
+    <h2>Educação</h2>
 
     <div class="entry">
         <div class="entry-header">
@@ -225,11 +263,13 @@
 
     <h2>Habilidades Técnicas</h2>
     <ul>
-        <li><strong>Frontend:</strong> Vue.js, Nuxt.js, React, Pinia, TypeScript, Tailwind CSS</li>
-        <li><strong>Backend:</strong> Node.js, NestJS, Express, Python, FastAPI</li>
+        <li><strong>Linguagens:</strong> TypeScript, JavaScript (ES6+), Python, Solidity, SQL</li>
+        <li><strong>Backend:</strong> Node.js, NestJS, Express, APIs REST, FastAPI</li>
+        <li><strong>Frontend:</strong> React, Next.js, Vue.js, Nuxt.js, Pinia, Tailwind CSS</li>
+        <li><strong>Dados e Cloud:</strong> PostgreSQL, MongoDB, MySQL, Redis, AWS, Docker, GitHub Actions</li>
         <li><strong>IA:</strong> RAG, embeddings, tool calling, MCP, agent workflows</li>
-        <li><strong>Blockchain / Trust:</strong> Solidity, Hardhat, Polygon, Hedera, Arweave, IPFS, Viem</li>
-        <li><strong>Dados e Cloud:</strong> PostgreSQL, MongoDB, MySQL, Qdrant, Redis, AWS, Docker</li>
+        <li><strong>Trust / Web3:</strong> Hardhat, Polygon, Hedera, Arweave, IPFS, Viem</li>
+        <li><strong>Idiomas:</strong> Inglês (básico), espanhol, português</li>
     </ul>
 </body>
 </html>

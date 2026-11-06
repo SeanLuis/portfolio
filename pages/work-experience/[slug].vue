@@ -18,7 +18,7 @@ const { slug } = route.params;
 useSeoMeta({
   ogImage: `https://sean-rodriguez.vercel.app/articles/${slug}.png`,
   twitterCard: "summary_large_image",
-  articleAuthor: "Fayaz Ahmed",
+  articleAuthor: "Sean Luis Guada Rodríguez",
 });
 </script>
 <style>
